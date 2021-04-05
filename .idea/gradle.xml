@@ -50,6 +50,16 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/qforgemods-materials" />
+        <option name="gradleJvm" value="adopt-openjdk-11" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/qforgemods-materials" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/qforgemods-pccrash" />
         <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">

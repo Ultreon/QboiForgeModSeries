@@ -1,14 +1,5 @@
-# User-specific stuff
-.idea/
-
-*.iml
-*.ipr
-*.iws
-
 # IntelliJ
 out/
-# mpeltonen/sbt-idea plugin
-.idea_modules/
 
 # JIRA plugin
 atlassian-ide-plugin.xml
@@ -119,6 +110,6 @@ run/
 !gradle-wrapper.jar
 
 # Build folders.
-/build/
-/.gradle/
-/run/
+build/
+.gradle/
+run/
