@@ -7,7 +7,6 @@ import com.qtech.forgemods.core.modules.tiles.blocks.rails.SpeedRailBlock;
 import com.qtech.forgemods.core.modules.ui.ModItemGroups;
 import com.qtech.forgemods.core.init.Registration;
 import com.qtech.forgemods.core.modules.tiles.blocks.machines.alloysmelter.AlloySmelterBlock;
-import com.qtech.forgemods.core.modules.items.OreMaterial;
 import com.qtech.forgemods.core.modules.tiles.blocks.AtomicTNTBlock;
 import com.qtech.forgemods.core.modules.tiles.blocks.ChristmasChestBlock;
 import com.qtech.forgemods.core.modules.tiles.blocks.GamePcBlock;
@@ -33,8 +32,6 @@ import com.qtech.forgemods.core.modules.tiles.blocks.machines.quarry.QuarryBlock
 import com.qtech.forgemods.core.modules.tiles.blocks.machines.refinery.RefineryBlock;
 import com.qtech.forgemods.core.modules.tiles.blocks.machines.solidifier.SolidifierBlock;
 import com.qtech.forgemods.core.modules.tiles.blocks.machines.wire.WireBlock;
-import com.qtech.forgemods.core.modules.tiles.blocks.trees.CherryTree;
-import com.qtech.forgemods.core.modules.tiles.blocks.trees.EucalyptusTree;
 import com.qtech.forgemods.core.modules.items.objects.type.FaceableBlock;
 import com.qsoftware.modlib.silentlib.registry.ItemRegistryObject;
 import com.qtech.forgemods.core.common.enums.MachineTier;
@@ -92,8 +89,6 @@ public final class ModBlocks {
     public static final BlockRegistryObject<DryingRackBlock> JUNGLE_DRYING_RACK = registerMachine("jungle_drying_rack", DryingRackBlock::new);
     public static final BlockRegistryObject<DryingRackBlock> DARK_OAK_DRYING_RACK = registerMachine("dark_oak_drying_rack", DryingRackBlock::new);
     public static final BlockRegistryObject<DryingRackBlock> ACACIA_DRYING_RACK = registerMachine("acacia_drying_rack", DryingRackBlock::new);
-    public static final BlockRegistryObject<DryingRackBlock> EUCALYPTUS_DRYING_RACK = registerMachine("eucalyptus_drying_rack", DryingRackBlock::new);
-    public static final BlockRegistryObject<DryingRackBlock> CHERRY_DRYING_RACK = registerMachine("cherry_drying_rack", DryingRackBlock::new);
 
     ////////////////////////
     //     Processing     //
@@ -145,12 +140,6 @@ public final class ModBlocks {
     public static final BlockRegistryObject<WireBlock> WIRE = registerMachine("wire", () -> new WireBlock(Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(1.0f, 5.0f)));
     public static final BlockRegistryObject<PipeBlock> PIPE = registerMachine("pipe", () -> new PipeBlock(Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(1.0f, 5.0f)));
     public static final BlockRegistryObject<ItemPipeBlock> ITEM_PIPE = registerMachine("item_pipe", () -> new ItemPipeBlock(Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(1.0f, 5.0f)));
-
-    ////////////////////
-    //     Fluids     //
-    ////////////////////
-    public static final BlockRegistryObject<FlowingFluidBlock> OIL = registerFluid("oil", () -> ModFluids.OIL);
-    public static final BlockRegistryObject<FlowingFluidBlock> DIESEL = registerFluid("diesel", () -> ModFluids.DIESEL);
 
     /////////////////////
     //     Flowers     //
@@ -229,26 +218,26 @@ public final class ModBlocks {
     public static final BlockRegistryObject<Block> ASPHALT = registerMiscellaneous("asphalt", () -> new Block(Block.Properties.create(Material.ROCK).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(0).hardnessAndResistance(1.2F, 4.5F).sound(SoundType.STONE)));
     public static final BlockRegistryObject<AtomicTNTBlock> ATOMIC_TNT = registerMiscellaneous("atomic_tnt", () -> new AtomicTNTBlock(Block.Properties.create(Material.TNT).zeroHardnessAndResistance().sound(SoundType.PLANT)));
 
-    //////////////////
-    //     Wood     //
-    //////////////////
-    public static final BlockRegistryObject<Block> EUCALYPTUS_PLANKS = registerWood("eucalyptus_planks", () -> new Block(Block.Properties.create(Material.WOOD).harvestTool(ToolType.AXE).hardnessAndResistance(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final BlockRegistryObject<RotatedPillarBlock> EUCALYPTUS_LOG = registerWood("eucalyptus_log", () -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).harvestTool(ToolType.AXE).hardnessAndResistance(2.0f).harvestTool(ToolType.AXE).sound(SoundType.WOOD)));
-    public static final BlockRegistryObject<LeavesBlock> EUCALYPTUS_LEAVES = register("eucalyptus_leaves", ModBlocks::createLeavesBlock);
-    public static final BlockRegistryObject<SaplingBlock> EUCALYPTUS_SAPLING = register("eucalyptus_sapling", () -> new SaplingBlock(new EucalyptusTree(), AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT)));
-    public static final BlockRegistryObject<StairsBlock> EUCALYPTUS_STAIRS = registerShaped("eucalyptus_stairs", () -> new StairsBlock(EUCALYPTUS_PLANKS.get()::getDefaultState, Block.Properties.from(EUCALYPTUS_PLANKS.get())));
-    public static final BlockRegistryObject<SlabBlock> EUCALYPTUS_SLAB = registerShaped("eucalyptus_slab", () -> new SlabBlock(Block.Properties.from(EUCALYPTUS_PLANKS.get())));
-    public static final BlockRegistryObject<FenceBlock> EUCALYPTUS_FENCE = registerShaped("eucalyptus_fence", () -> new FenceBlock(Block.Properties.from(EUCALYPTUS_PLANKS.get())));
-    public static final BlockRegistryObject<FenceGateBlock> EUCALYPTUS_FENCE_GATE = registerShaped("eucalyptus_fence_gate", () -> new FenceGateBlock(Block.Properties.from(EUCALYPTUS_PLANKS.get())));
-
-    public static final BlockRegistryObject<Block> CHERRY_PLANKS = registerWood("cherry_planks", () -> new Block(Block.Properties.create(Material.WOOD).harvestTool(ToolType.AXE).hardnessAndResistance(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final BlockRegistryObject<Block> CHERRY_LOG = registerWood("cherry_log", () -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).hardnessAndResistance(2.0f).harvestTool(ToolType.AXE).sound(SoundType.WOOD)));
-    public static final BlockRegistryObject<LeavesBlock> CHERRY_LEAVES = register("cherry_leaves", ModBlocks::createLeavesBlock);
-    public static final BlockRegistryObject<SaplingBlock> CHERRY_SAPLING = register("cherry_sapling", () -> new SaplingBlock(new CherryTree(), AbstractBlock.Properties.create(Material.PLANTS).harvestTool(ToolType.AXE).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT)));
-    public static final BlockRegistryObject<StairsBlock> CHERRY_STAIRS = registerShaped("cherry_stairs", () -> new StairsBlock(CHERRY_PLANKS.get()::getDefaultState, Block.Properties.from(CHERRY_PLANKS.get())));
-    public static final BlockRegistryObject<SlabBlock> CHERRY_SLAB = registerShaped("cherry_slab", () -> new SlabBlock(Block.Properties.from(CHERRY_PLANKS.get())));
-    public static final BlockRegistryObject<FenceBlock> CHERRY_FENCE = registerShaped("cherry_fence", () -> new FenceBlock(Block.Properties.from(CHERRY_PLANKS.get())));
-    public static final BlockRegistryObject<FenceGateBlock> CHERRY_FENCE_GATE = registerShaped("cherry_fence_gate", () -> new FenceGateBlock(Block.Properties.from(CHERRY_PLANKS.get())));
+//    //////////////////
+//    //     Wood     //
+//    //////////////////
+//    public static final BlockRegistryObject<Block> EUCALYPTUS_PLANKS = registerWood("eucalyptus_planks", () -> new Block(Block.Properties.create(Material.WOOD).harvestTool(ToolType.AXE).hardnessAndResistance(2.0f, 3.0f).sound(SoundType.WOOD)));
+//    public static final BlockRegistryObject<RotatedPillarBlock> EUCALYPTUS_LOG = registerWood("eucalyptus_log", () -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.QUARTZ).harvestTool(ToolType.AXE).hardnessAndResistance(2.0f).harvestTool(ToolType.AXE).sound(SoundType.WOOD)));
+//    public static final BlockRegistryObject<LeavesBlock> EUCALYPTUS_LEAVES = register("eucalyptus_leaves", ModBlocks::createLeavesBlock);
+//    public static final BlockRegistryObject<SaplingBlock> EUCALYPTUS_SAPLING = register("eucalyptus_sapling", () -> new SaplingBlock(new EucalyptusTree(), AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT)));
+//    public static final BlockRegistryObject<StairsBlock> EUCALYPTUS_STAIRS = registerShaped("eucalyptus_stairs", () -> new StairsBlock(EUCALYPTUS_PLANKS.get()::getDefaultState, Block.Properties.from(EUCALYPTUS_PLANKS.get())));
+//    public static final BlockRegistryObject<SlabBlock> EUCALYPTUS_SLAB = registerShaped("eucalyptus_slab", () -> new SlabBlock(Block.Properties.from(EUCALYPTUS_PLANKS.get())));
+//    public static final BlockRegistryObject<FenceBlock> EUCALYPTUS_FENCE = registerShaped("eucalyptus_fence", () -> new FenceBlock(Block.Properties.from(EUCALYPTUS_PLANKS.get())));
+//    public static final BlockRegistryObject<FenceGateBlock> EUCALYPTUS_FENCE_GATE = registerShaped("eucalyptus_fence_gate", () -> new FenceGateBlock(Block.Properties.from(EUCALYPTUS_PLANKS.get())));
+//
+//    public static final BlockRegistryObject<Block> CHERRY_PLANKS = registerWood("cherry_planks", () -> new Block(Block.Properties.create(Material.WOOD).harvestTool(ToolType.AXE).hardnessAndResistance(2.0f, 3.0f).sound(SoundType.WOOD)));
+//    public static final BlockRegistryObject<Block> CHERRY_LOG = registerWood("cherry_log", () -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).harvestTool(ToolType.AXE).hardnessAndResistance(2.0f).harvestTool(ToolType.AXE).sound(SoundType.WOOD)));
+//    public static final BlockRegistryObject<LeavesBlock> CHERRY_LEAVES = register("cherry_leaves", ModBlocks::createLeavesBlock);
+//    public static final BlockRegistryObject<SaplingBlock> CHERRY_SAPLING = register("cherry_sapling", () -> new SaplingBlock(new CherryTree(), AbstractBlock.Properties.create(Material.PLANTS).harvestTool(ToolType.AXE).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT)));
+//    public static final BlockRegistryObject<StairsBlock> CHERRY_STAIRS = registerShaped("cherry_stairs", () -> new StairsBlock(CHERRY_PLANKS.get()::getDefaultState, Block.Properties.from(CHERRY_PLANKS.get())));
+//    public static final BlockRegistryObject<SlabBlock> CHERRY_SLAB = registerShaped("cherry_slab", () -> new SlabBlock(Block.Properties.from(CHERRY_PLANKS.get())));
+//    public static final BlockRegistryObject<FenceBlock> CHERRY_FENCE = registerShaped("cherry_fence", () -> new FenceBlock(Block.Properties.from(CHERRY_PLANKS.get())));
+//    public static final BlockRegistryObject<FenceGateBlock> CHERRY_FENCE_GATE = registerShaped("cherry_fence_gate", () -> new FenceGateBlock(Block.Properties.from(CHERRY_PLANKS.get())));
 
     //////////////////////
     //     Redstone     //
@@ -295,12 +284,12 @@ public final class ModBlocks {
     ////////////////////////
     //     Ore blocks     //
     ////////////////////////
-    @Deprecated public static final BlockRegistryObject<OreBlock> STEEL_ORE = registerNoItem("steel_ore", () -> new OreBlock(Block.Properties.create(Material.ROCK).setRequiresTool().harvestTool(ToolType.PICKAXE).hardnessAndResistance(3.25f, 3.45f).sound(SoundType.STONE).harvestLevel(2)));
-    @Deprecated public static final BlockRegistryObject<OreBlock> TUNGSTEN_ORE = registerNoItem("tungsten_ore", () -> new OreBlock(Block.Properties.create(Material.ROCK).setRequiresTool().harvestTool(ToolType.PICKAXE).hardnessAndResistance(5.25f, 6.5f).sound(SoundType.STONE).harvestLevel(3)));
-    @Deprecated public static final ItemRegistryObject<BlockItem> STEEL_ORE_ITEM = registerItem("steel_ore", () -> new BlockItem(STEEL_ORE.get(), new Item.Properties()));
-    @Deprecated public static final ItemRegistryObject<BlockItem> TUNGSTEN_ORE_ITEM = registerItem("tungsten_ore", () -> new BlockItem(TUNGSTEN_ORE.get(), new Item.Properties()));
+//    @Deprecated public static final BlockRegistryObject<OreBlock> STEEL_ORE = registerNoItem("steel_ore", () -> new OreBlock(Block.Properties.create(Material.ROCK).setRequiresTool().harvestTool(ToolType.PICKAXE).hardnessAndResistance(3.25f, 3.45f).sound(SoundType.STONE).harvestLevel(2)));
+//    @Deprecated public static final BlockRegistryObject<OreBlock> TUNGSTEN_ORE = registerNoItem("tungsten_ore", () -> new OreBlock(Block.Properties.create(Material.ROCK).setRequiresTool().harvestTool(ToolType.PICKAXE).hardnessAndResistance(5.25f, 6.5f).sound(SoundType.STONE).harvestLevel(3)));
+//    @Deprecated public static final ItemRegistryObject<BlockItem> STEEL_ORE_ITEM = registerItem("steel_ore", () -> new BlockItem(STEEL_ORE.get(), new Item.Properties()));
+//    @Deprecated public static final ItemRegistryObject<BlockItem> TUNGSTEN_ORE_ITEM = registerItem("tungsten_ore", () -> new BlockItem(TUNGSTEN_ORE.get(), new Item.Properties()));
 
-    public static final BlockRegistryObject<OreBlock> GILDED_DIRT = registerOre("gilded_dirt", () -> new OreBlock(Block.Properties.create(Material.EARTH, MaterialColor.DIRT).setRequiresTool().harvestTool(ToolType.SHOVEL).hardnessAndResistance(0.5f).sound(SoundType.GROUND)));
+//    public static final BlockRegistryObject<OreBlock> GILDED_DIRT = registerOre("gilded_dirt", () -> new OreBlock(Block.Properties.create(Material.EARTH, MaterialColor.DIRT).setRequiresTool().harvestTool(ToolType.SHOVEL).hardnessAndResistance(0.5f).sound(SoundType.GROUND)));
 //    public static final BlockRegistryObject<OreBlock> RUBY_ORE = registerOre("ruby_ore", () -> new OreBlock(Block.Properties.create(Material.ROCK).setRequiresTool().harvestTool(ToolType.PICKAXE).hardnessAndResistance(2.75f, 2.875f).sound(SoundType.STONE).harvestLevel(2)));
 //    public static final BlockRegistryObject<OreBlock> AMETHYST_ORE = registerOre("amethyst_ore", () -> new OreBlock(Block.Properties.create(Material.ROCK).setRequiresTool().harvestTool(ToolType.PICKAXE).hardnessAndResistance(2.25f, 2.375f).sound(SoundType.STONE).harvestLevel(2)));
 //    public static final BlockRegistryObject<OreBlock> AQUAMARINE_ORE = registerOre("aquamarine_ore", () -> new OreBlock(Block.Properties.create(Material.ROCK).setRequiresTool().harvestTool(ToolType.PICKAXE).hardnessAndResistance(2.155f, 2.4635f).sound(SoundType.STONE).harvestLevel(2)));
@@ -348,7 +337,7 @@ public final class ModBlocks {
     //     Utility methods     //
     //////////////////////////////
     static {
-        OreMaterial.registerBlocks();
+//        OreMaterial.registerBlocks();
     }
 
     private static <T extends Item> ItemRegistryObject<T> registerItem(String name, Supplier<T> supplier) {
@@ -391,12 +380,12 @@ public final class ModBlocks {
     private static <T extends Block> BlockRegistryObject<T> registerSpecial(String name, Supplier<T> block) {
         return register(name, block, ModBlocks::specialItem);
     }
-    private static <T extends Block> BlockRegistryObject<T> registerOre(String name, Supplier<T> block) {
-        return register(name, block, ModBlocks::oreItem);
-    }
-    private static <T extends Block> BlockRegistryObject<T> registerWood(String name, Supplier<T> block) {
-        return register(name, block, ModBlocks::woodItem);
-    }
+//    private static <T extends Block> BlockRegistryObject<T> registerOre(String name, Supplier<T> block) {
+//        return register(name, block, ModBlocks::oreItem);
+//    }
+//    private static <T extends Block> BlockRegistryObject<T> registerWood(String name, Supplier<T> block) {
+//        return register(name, block, ModBlocks::woodItem);
+//    }
     private static <T extends Block> BlockRegistryObject<T> registerShaped(String name, Supplier<T> block) {
         return register(name, block, ModBlocks::shapedItem);
     }
@@ -439,12 +428,12 @@ public final class ModBlocks {
     private static <T extends Block> Supplier<BlockItem> specialItem(BlockRegistryObject<T> block) {
         return () -> new BlockItem(block.get(), new Item.Properties().group(ModItemGroups.SPECIALS));
     }
-    private static <T extends Block> Supplier<BlockItem> oreItem(BlockRegistryObject<T> block) {
-        return () -> new BlockItem(block.get(), new Item.Properties().group(ModItemGroups.ORES));
-    }
-    private static <T extends Block> Supplier<BlockItem> woodItem(BlockRegistryObject<T> block) {
-        return () -> new BlockItem(block.get(), new Item.Properties().group(ModItemGroups.WOOD));
-    }
+//    private static <T extends Block> Supplier<BlockItem> oreItem(BlockRegistryObject<T> block) {
+//        return () -> new BlockItem(block.get(), new Item.Properties().group(ModItemGroups.ORES));
+//    }
+//    private static <T extends Block> Supplier<BlockItem> woodItem(BlockRegistryObject<T> block) {
+//        return () -> new BlockItem(block.get(), new Item.Properties().group(ModItemGroups.WOOD));
+//    }
     private static <T extends Block> Supplier<BlockItem> shapedItem(BlockRegistryObject<T> block) {
         return () -> new BlockItem(block.get(), new Item.Properties().group(ModItemGroups.SHAPES));
     }

@@ -5,7 +5,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.qtech.forgemods.core.QFMCore;
 import com.qtech.forgemods.core.init.ModRecipes;
-import com.qtech.forgemods.core.modules.items.OreMaterial;
 import com.qsoftware.modlib.silentlib.util.NameUtils;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.item.Item;
@@ -36,9 +35,9 @@ public class AlloySmeltingRecipeBuilder {
     }
 
     @SuppressWarnings("OptionalGetWithoutIsPresent")
-    public static AlloySmeltingRecipeBuilder builder(OreMaterial result, int count, int processTime) {
-        return builder(result.getIngot().get(), count, processTime);
-    }
+//    public static AlloySmeltingRecipeBuilder builder(OreMaterial result, int count, int processTime) {
+//        return builder(result.getIngot().get(), count, processTime);
+//    }
 
     public AlloySmeltingRecipeBuilder ingredient(Ingredient ingredient, int count) {
         ingredients.put(ingredient, count);
@@ -53,9 +52,9 @@ public class AlloySmeltingRecipeBuilder {
         return ingredient(Ingredient.fromTag(tag), count);
     }
 
-    public AlloySmeltingRecipeBuilder ingredient(OreMaterial metal, int count) {
-        return ingredient(metal.getSmeltables(), count);
-    }
+//    public AlloySmeltingRecipeBuilder ingredient(OreMaterial metal, int count) {
+//        return ingredient(metal.getSmeltables(), count);
+//    }
 
     public void build(Consumer<IFinishedRecipe> consumer) {
         ResourceLocation resultId = NameUtils.fromItem(result);

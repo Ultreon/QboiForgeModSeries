@@ -2,7 +2,7 @@ package com.qtech.forgemods.debugmenu.pages;
 
 import com.qtech.forgemods.debugmenu.DebugEntry;
 import com.qtech.forgemods.debugmenu.DebugPage;
-import com.qtech.modlib.common.Size;
+import com.qsoftware.modlib.common.Size;
 import net.minecraft.client.MainWindow;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Monitor;

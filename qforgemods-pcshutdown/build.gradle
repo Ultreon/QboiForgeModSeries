@@ -83,7 +83,7 @@ output.close()
 
 //boolean isDevTest = Boolean.parseBoolean(isDevTestString)
 
-version = vers + "." + release + '.' + buildNumber + "-" + stage + stageRelease
+version = vers + "." + release + '.' + buildNumber
 group = 'com.qtech.forgemods'
 archivesBaseName = 'pcshutdown'
 
@@ -222,9 +222,11 @@ repositories {
     flatDir {
         dirs './libs'
     }
-//    maven {
-//        url "file://${local_maven}"
-//    }
+    if (project.hasProperty("local_maven")) {
+        maven {
+            url "file://${local_maven}"
+        }
+    }
     maven {
         url "https://github.com/QTechCommunity/Maven/raw/main/"
     }
@@ -258,12 +260,14 @@ dependencies {
     runtimeOnly fg.deobf(group: "com.qsoftware", name: "qmodlib", version: "1.0.+")
 
     // QFM Core
-    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1363-b6")
-    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1363-b6")
+    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1430");
+    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1430");
 
-    // QFM Action Menu
-    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "actionmenu", version: "2.0.1373-b6")
-    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "actionmenu", version: "2.0.1373-b6")
+    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "actionmenu", version: "2.0.1421")
+    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "actionmenu", version: "2.0.1421")
+
+    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "debugmenu", version: "2.0.1417");
+    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "debugmenu", version: "2.0.1417");
 
     compileOnly 'org.projectlombok:lombok:1.18.18'
     annotationProcessor 'org.projectlombok:lombok:1.18.18'
@@ -459,7 +463,7 @@ jar {
                 "Implementation-Version": "${version}",
                 "Implementation-Vendor" :"qtech-community",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs": "qforgemod.mixins.json",
+//                "MixinConfigs": "qforgemod.mixins.json",
                 "Build-Number": build.toString()
         ])
     }

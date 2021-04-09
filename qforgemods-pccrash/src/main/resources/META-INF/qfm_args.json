@@ -3,15 +3,15 @@
       "dev_test": "false"
    },
    "version": {
-      "name": "2.0.1408-b6",
+      "name": "2.0.1415",
       "version": 2,
       "release": 0,
-      "build": 1408,
+      "build": 1415,
       "stage": "b",
       "stage_release": 6
    },
    "build_info": {
-      "date": "2021-04-05T00:13:59.581628800",
+      "date": "2021-04-09T01:12:31.574677300",
       "compile": {
          "name": "compileJava",
          "source_compat": "1.8",
@@ -24,9 +24,9 @@
          "name": "qforgemods-pccrash",
          "display_name": "project \u0027:qforgemods-pccrash\u0027",
          "minecraft": {
-            "mappings_version": "20201028-1.16.3",
+            "mappings_version": "20210309-1.16.5",
             "mappings_channel": "snapshot",
-            "mappings": "snapshot_20201028-1.16.3",
+            "mappings": "snapshot_20210309-1.16.5",
             "version": "1.16.4",
             "forge_version": "35.1.16"
          }

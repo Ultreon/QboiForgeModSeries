@@ -4,8 +4,6 @@ import com.qtech.forgemods.core.QFMCore;
 import com.qtech.forgemods.core.client.gui.modules.ModuleCompatibility;
 import com.qtech.forgemods.core.common.Module;
 import com.qtech.forgemods.core.common.ModuleSecurity;
-import com.qtech.forgemods.core.modules.actionmenu.MainActionMenu;
-import com.qtech.forgemods.core.modules.actionmenu.MenuHandler;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.common.MinecraftForge;
 import org.jetbrains.annotations.NotNull;
@@ -15,7 +13,6 @@ public class DebuggingModule extends Module {
 
     public DebuggingModule() {
 
-        MainActionMenu.registerHandler(new MenuHandler(new StringTextComponent("Debugging"), debuggingMenu));
     }
 
     @Override

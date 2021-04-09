@@ -186,7 +186,7 @@ public class UpdatesModule extends Module {
             if (ticker.getCurrentTicks() >= (tickDelay)) {
                 ticker.reset();
 
-                QFMCore.LOGGER.info("Checking for mod updates...");
+                QFMUpdates.LOGGER.info("Checking for mod updates...");
 
                 AbstractUpdater<?>[] updaters = AbstractUpdater.getInstances();
                 for (AbstractUpdater<?> updater : updaters) {
@@ -204,7 +204,7 @@ public class UpdatesModule extends Module {
                         latestKnownMap.put(updater, latest);
 
                         if (updateInfo.getStatus() == AbstractUpdater.UpdateStatus.UPDATE_AVAILABLE) {
-                            QFMCore.LOGGER.info("Update available for " + updater.getModInfo().getModId());
+                            QFMUpdates.LOGGER.info("Update available for " + updater.getModInfo().getModId());
                         }
                     }
                 }

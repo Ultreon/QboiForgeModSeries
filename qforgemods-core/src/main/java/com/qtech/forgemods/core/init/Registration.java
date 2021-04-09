@@ -1,9 +1,7 @@
 package com.qtech.forgemods.core.init;
 
 import com.qtech.forgemods.core.QFMCore;
-import com.qtech.forgemods.core.modules.items.tools.ModTraits;
 import com.qtech.forgemods.core.modules.tiles.ModBlocks;
-import com.qtech.forgemods.core.modules.tiles.ModFluids;
 import com.qtech.forgemods.core.modules.tiles.ModMachineTileEntities;
 import com.qtech.forgemods.core.modules.environment.ModEffects;
 import com.qtech.forgemods.core.modules.items.ModItems;
@@ -65,17 +63,17 @@ public final class Registration {
         ITEMS.register(modEventBus);
         POTIONS.register(modEventBus);
         RECIPE_SERIALIZERS.register(modEventBus);
-        ModTraits.REGISTRY.register(modEventBus);
+//        ModTraits.REGISTRY.register(modEventBus);
 
         ModBlocks.register();
         ModEffects.register();
-        ModFluids.register();
+//        ModFluids.register();
         ModStats.register();
         ModMachineContainers.register();
         ModItems.register();
         ModRecipes.register();
         ModMachineTileEntities.register();
-        ModTraits.register();
+//        ModTraits.register();
     }
 
     @SuppressWarnings("unchecked")

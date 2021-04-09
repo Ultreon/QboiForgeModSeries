@@ -3,6 +3,8 @@ package com.qtech.forgemods.debugmenu;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.qsoftware.modlib.api.annotations.FieldsAreNonnullByDefault;
+import com.qtech.forgemods.actionmenu.IActionMenuItem;
+import com.qtech.forgemods.actionmenu.QFMActionMenu;
 import com.qtech.forgemods.core.QFMCore;
 import com.qtech.forgemods.core.QFMCorePlugin;
 import com.qtech.forgemods.core.QFMVersion;
@@ -14,6 +16,9 @@ import lombok.Getter;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -30,8 +35,7 @@ import java.io.InputStreamReader;
 import java.util.Objects;
 
 /**
- * The main mod class.
- * Here's everything started.
+ * The main class file for QFM: Debug Menu
  *
  * @author Qboi123
  * @see #QFMDebugMenu()
@@ -81,6 +85,75 @@ public class QFMDebugMenu implements QFMCorePlugin {
         modArgs = new QfmArgs(o);
         modVersion = modArgs.getVersion().getName();
         version = modArgs.getVersion().toVersionObject();
+
+        QFMActionMenu.getEntityMenu().addItem(new IActionMenuItem() {
+            @Override
+            public void onActivate() {
+                DebugMenu.DEBUG_PAGE = DebugMenu.PAGE.ENTITY;
+            }
+
+            @Override
+            public ITextComponent getText() {
+                return new StringTextComponent("Set Debug Page");
+            }
+
+            @Override
+            public boolean isEnabled() {
+                Minecraft mc = Minecraft.getInstance();
+                return mc.player != null && mc.world != null && mc.playerController != null;
+            }
+        });
+        QFMActionMenu.getItemMenu().addItem(new IActionMenuItem() {
+            @Override
+            public void onActivate() {
+                DebugMenu.DEBUG_PAGE = DebugMenu.PAGE.ITEM;
+            }
+
+            @Override
+            public ITextComponent getText() {
+                return new StringTextComponent("Set Debug Page");
+            }
+
+            @Override
+            public boolean isEnabled() {
+                Minecraft mc = Minecraft.getInstance();
+                return mc.player != null && mc.world != null && mc.playerController != null;
+            }
+        });
+        QFMActionMenu.getMinecraftMenu().addItem(new IActionMenuItem() {
+            @Override
+            public void onActivate() {
+                DebugMenu.DEBUG_PAGE = DebugMenu.PAGE.MINECRAFT;
+            }
+
+            @Override
+            public ITextComponent getText() {
+                return new TranslationTextComponent("action.qforgemod.set_debug_page");
+            }
+
+            @Override
+            public boolean isEnabled() {
+                Minecraft mc = Minecraft.getInstance();
+                return mc.player != null && mc.world != null && mc.playerController != null;
+            }
+        });
+        QFMActionMenu.getWindowMenu().addItem(new IActionMenuItem() {
+            @Override
+            public void onActivate() {
+                DebugMenu.DEBUG_PAGE = DebugMenu.PAGE.WINDOW;
+            }
+
+            @Override
+            public ITextComponent getText() {
+                return new TranslationTextComponent("action.qforgemod.set_debug_page");
+            }
+
+            @Override
+            public boolean isEnabled() {
+                Minecraft mc = Minecraft.getInstance();
+                return mc.player != null && mc.world != null && mc.playerController != null;
+            }
+        });
     }
 
     // Getters

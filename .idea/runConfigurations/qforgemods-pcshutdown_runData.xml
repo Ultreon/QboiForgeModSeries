@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component>
+  <configuration default="false" factoryName="Application" name="qforgemods-pcshutdown runData" singleton="false" type="Application">
+    <option name="MAIN_CLASS_NAME" value="net.minecraftforge.userdev.LaunchTesting"/>
+    <option name="VM_PARAMETERS" value="-Dforge.logging.console.level=debug -Dforge.logging.markers=SCAN,REGISTRIES,REGISTRYDUMP"/>
+    <option name="PROGRAM_PARAMETERS" value="--mod qforgemods-core --all --output D:\Github\!QboiForgeModSeries\qforgemods-pcshutdown\src\generated\resources --existing D:\Github\!QboiForgeModSeries\qforgemods-pcshutdown\src\main\resources --existing-mod computercraft --existing-mod jei"/>
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$\qforgemods-pcshutdown\run"/>
+    <module name="qforgemods-pcshutdown.main"/>
+    <envs>
+      <env name="MOD_CLASSES" value="qforgemods-core%%$PROJECT_DIR$\qforgemods-pcshutdown\build\resources\main;qforgemods-core%%$PROJECT_DIR$\qforgemods-pcshutdown\build\classes\java\main"/>
+      <env name="MCP_MAPPINGS" value="snapshot_20210309-1.16.5"/>
+      <env name="MCP_VERSION" value="20201102.104115"/>
+      <env name="FORGE_VERSION" value="35.1.16"/>
+      <env name="FORGE_GROUP" value="net.minecraftforge"/>
+      <env name="target" value="fmluserdevdata"/>
+      <env name="MC_VERSION" value="1.16.4"/>
+    </envs>
+    <method v="2">
+      <option enabled="true" name="Make"/>
+      <option enabled="true" externalProjectPath="$PROJECT_DIR$" name="Gradle.BeforeRunTask" tasks=":qforgemods-pcshutdown:prepareRunData"/>
+    </method>
+  </configuration>
+</component>

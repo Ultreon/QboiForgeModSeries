@@ -3,15 +3,15 @@
       "dev_test": "false"
    },
    "version": {
-      "name": "2.0.1379-b6",
+      "name": "2.0.1414",
       "version": 2,
       "release": 0,
-      "build": 1379,
+      "build": 1414,
       "stage": "b",
       "stage_release": 6
    },
    "build_info": {
-      "date": "2021-04-05T12:12:47.416396",
+      "date": "2021-04-09T01:12:31.396556400",
       "compile": {
          "name": "compileJava",
          "source_compat": "1.8",
@@ -21,12 +21,12 @@
          }
       },
       "project": {
-         "name": "materials",
-         "display_name": "root project \u0027materials\u0027",
+         "name": "qforgemods-materials",
+         "display_name": "project \u0027:qforgemods-materials\u0027",
          "minecraft": {
-            "mappings_version": "20201028-1.16.3",
+            "mappings_version": "20210309-1.16.5",
             "mappings_channel": "snapshot",
-            "mappings": "snapshot_20201028-1.16.3",
+            "mappings": "snapshot_20210309-1.16.5",
             "version": "1.16.4",
             "forge_version": "35.1.16"
          }

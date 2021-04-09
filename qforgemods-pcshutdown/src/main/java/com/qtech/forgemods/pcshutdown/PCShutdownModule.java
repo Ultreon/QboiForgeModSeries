@@ -1,18 +1,14 @@
 package com.qtech.forgemods.pcshutdown;
 
 import com.qsoftware.modlib.api.annotations.FieldsAreNonnullByDefault;
-import com.qtech.forgemods.core.Modules;
+import com.qtech.forgemods.actionmenu.AbstractActionMenu;
+import com.qtech.forgemods.actionmenu.MainActionMenu;
+import com.qtech.forgemods.actionmenu.MenuHandler;
 import com.qtech.forgemods.core.QFMCore;
 import com.qtech.forgemods.core.client.gui.modules.ModuleCompatibility;
 import com.qtech.forgemods.core.common.Module;
 import com.qtech.forgemods.core.common.ModuleManager;
 import com.qtech.forgemods.core.common.ModuleSecurity;
-import com.qtech.forgemods.core.modules.actionmenu.AbstractActionMenu;
-import com.qtech.forgemods.core.modules.actionmenu.MainActionMenu;
-import com.qtech.forgemods.core.modules.actionmenu.MenuHandler;
-import com.qtech.forgemods.core.modules.pcShutdown.ComputerMenu;
-import com.qtech.forgemods.core.modules.pcShutdown.ConfirmShutdownScreen;
-import com.qtech.forgemods.core.util.ComputerUtils;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.InputMappings;
@@ -36,7 +32,7 @@ public class PCShutdownModule extends Module {
     }
 
     private boolean enableMenu() {
-        return ModuleManager.getInstance().isEnabled(Modules.PC_SHUTDOWN) || ModuleManager.getInstance().isEnabled(Modules.PC_CRASH);
+        return ModuleManager.getInstance().isEnabled(QFMPcShutdown.PC_SHUTDOWN_MODULE) || ModuleManager.getInstance().isEnabled(QFMPcShutdown.PC_SHUTDOWN_MODULE);
     }
 
     @Override
@@ -96,7 +92,7 @@ public class PCShutdownModule extends Module {
         boolean k5 = InputMappings.isKeyDown(win, GLFW.GLFW_KEY_INSERT);
 
         if ((k1 || k2) && (k3 || k4) && k5 && !(mc.currentScreen instanceof ConfirmShutdownScreen)) {
-            ComputerUtils.shutdown();
+            PCPowerUtils.shutdown();
         }
     }
 }

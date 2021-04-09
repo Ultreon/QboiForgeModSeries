@@ -1,13 +1,8 @@
 package com.qtech.forgemods.core.modules.environment;
 
-import com.qtech.forgemods.core.Main;
 import com.qtech.forgemods.core.client.gui.modules.ModuleCompatibility;
 import com.qtech.forgemods.core.common.CoreRegisterModule;
 import com.qtech.forgemods.core.common.ModuleSecurity;
-import com.qtech.forgemods.core.modules.actionmenu.AbstractActionMenu;
-import com.qtech.forgemods.core.modules.actionmenu.MainActionMenu;
-import com.qtech.forgemods.core.modules.actionmenu.IMenuHandler;
-import com.qtech.forgemods.core.modules.actionmenu.MenuHandler;
 import com.qtech.forgemods.core.modules.environment.client.model.AdditionsModelCache;
 import com.qtech.forgemods.core.util.Targeter;
 import net.minecraft.client.Minecraft;
@@ -15,7 +10,6 @@ import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.EntityRayTraceResult;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.client.event.ModelBakeEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -29,10 +23,8 @@ import java.util.function.Supplier;
 
 public class EntitiesModule extends CoreRegisterModule<EntityType<?>> {
     public final DeferredRegister<EntityType<?>> ENTITIES = create(ForgeRegistries.ENTITIES);
-    private static final EntityMenu entityMenu = new EntityMenu();
 
     public EntitiesModule() {
-        MainActionMenu.registerHandler(new MenuHandler(new StringTextComponent("Entity"), entityMenu, EntitiesModule::enableMenu));
     }
 
     private static boolean enableMenu() {

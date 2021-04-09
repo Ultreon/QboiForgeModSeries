@@ -60,7 +60,7 @@ public class UpdateChecker {
                     latestKnownMap.put(updater, latest);
 
                     if (updateInfo.getStatus() == AbstractUpdater.UpdateStatus.UPDATE_AVAILABLE) {
-                        QFMCore.LOGGER.info("Update available for " + updater.getModInfo().getModId());
+                        QFMUpdates.LOGGER.info("Update available for " + updater.getModInfo().getModId());
                         UpdateToast systemToast = new UpdateToast(updater);
                         mc.getToastGui().add(systemToast);
                     }

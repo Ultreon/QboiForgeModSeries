@@ -33,16 +33,16 @@ import java.util.Objects;
  * @author Qboi123
  */
 @OnlyIn(Dist.CLIENT)
-@Mod.EventBusSubscriber(modid = QFMCore.modId, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = UpdatesReferences.modId., bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class UpdateAvailableScreen extends AdvancedScreen {
     // Icons.
-    private static final ResourceLocation SCREEN_ICONS = new ResourceLocation(QFMCore.modId, "textures/gui/icons.png");
+    private static final ResourceLocation SCREEN_ICONS = new ResourceLocation(UpdatesReferences.modId., "textures/gui/icons.png");
 
     // Flags.
     private static boolean initializedBefore = false;
 
     // Bidi Renderer.
-    private final IBidiRenderer field_243276_q = IBidiRenderer.field_243257_a;
+    private final IBidiRenderer bidiRenderer = IBidiRenderer.field_243257_a;
 
     // Texts.
     private final ITextComponent yesButtonText;
@@ -131,7 +131,7 @@ public class UpdateAvailableScreen extends AdvancedScreen {
         mcg.drawCenteredString(this.title, this.width / 2f, 70f, new Color(0xffffff));
         mcg.drawCenteredString(new TranslationTextComponent("msg.qforgemod.update_available.description", updater.getLatestVersion().toLocalizedString()), this.width / 2f, 90f, new Color(0xbfbfbf));
 
-        this.field_243276_q.func_241863_a(mcg.getMatrixStack(), this.width / 2, 90);
+        this.bidiRenderer.func_241863_a(mcg.getMatrixStack(), this.width / 2, 90);
 
         // Draw help icon.
         mcg.drawTexture(1, 1, 64, 15, 16, 16, SCREEN_ICONS);

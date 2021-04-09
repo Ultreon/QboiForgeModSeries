@@ -1,11 +1,8 @@
 package com.qtech.forgemods.core.config;
 
-import com.qtech.forgemods.core.QFMCore;
-import com.qtech.forgemods.core.common.Module;
-import com.qtech.forgemods.core.common.java.maps.SequencedHashMap;
-import com.qtech.forgemods.core.modules.environment.ores.DefaultOre;
-import com.qtech.forgemods.core.util.ExceptionUtil;
 import com.qsoftware.modlib.api.annotations.FieldsAreNonnullByDefault;
+import com.qtech.forgemods.core.QFMCore;
+import lombok.experimental.UtilityClass;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -14,9 +11,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.*;
 
 @SuppressWarnings("unused")
+@UtilityClass
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 @FieldsAreNonnullByDefault
@@ -34,14 +31,6 @@ public final class Config {
     public static final ForgeConfigSpec.IntValue fluidGeneratorInjectionVolume;
     private static final ForgeConfigSpec commonSpec;
     private static final ForgeConfigSpec.BooleanValue oreWorldGenMasterSwitch;
-
-    @Deprecated
-    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    private static final Map<DefaultOre, OreConfig> oreConfigs = new HashMap<>();
-
-    @Deprecated
-    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    private static final Map<Module, ForgeConfigSpec.BooleanValue> modules = new SequencedHashMap<>();
 
     private static final ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
 
@@ -95,15 +84,6 @@ public final class Config {
         commonSpec = builder.build();
     }
 
-    private Config() {
-        throw ExceptionUtil.utilityConstructor();
-    }
-
-    @Deprecated
-    public static Optional<OreConfig> getOreConfig(DefaultOre ore) {
-        return Optional.ofNullable(oreConfigs.getOrDefault(ore, null));
-    }
-
     public static void init() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, commonSpec);
     }
@@ -124,10 +104,6 @@ public final class Config {
 
     public static void save() {
         commonSpec.save();
-    }
-
-    public static ForgeConfigSpec.BooleanValue getModuleSpec(Module module) {
-        return modules.get(module);
     }
 
     @SuppressWarnings("unused")

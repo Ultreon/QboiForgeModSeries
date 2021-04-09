@@ -43,18 +43,14 @@ import java.util.Objects;
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 @FieldsAreNonnullByDefault
-@Mod(QFMUpdates.modId)
-@Mod.EventBusSubscriber(modid = QFMUpdates.modId, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod(UpdatesReferences.modId)
+@Mod.EventBusSubscriber(modid = UpdatesReferences.modId, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class QFMUpdates implements QFMCorePlugin {
     /**
      * QForgeMod's Logger
      */
     public static final Logger LOGGER = LogManager.getLogger("QFM:Generic");
 
-    // Mod Data
-    @Getter public static final String modId = "qfm_updates";
-    @Getter public static final String modName = "Qboi's Forge Mods: Updates";
-    @Getter public static final String nbtName = "QFMUpdates";
     @Getter public static final String modVersion;
     @Getter public static final QFMVersion version;
     @Getter private static final QfmArgs modArgs;
@@ -108,7 +104,7 @@ public class QFMUpdates implements QFMCorePlugin {
      * @return a resource location.
      */
     public static ResourceLocation rl(String path) {
-        return new ResourceLocation(modId, path);
+        return new ResourceLocation(UpdatesReferences.modId, path);
     }
 
     /**

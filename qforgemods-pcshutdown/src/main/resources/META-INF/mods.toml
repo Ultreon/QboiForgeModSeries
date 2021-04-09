@@ -42,35 +42,31 @@ Qboi's Forge Mods: PC Shutdown
 This is the debug menu mod for the Qboi's Forge Mod Series.
 It adds an more advanced debug menu in the game, using the F4 button as default.
 '''
-# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.qfm_pcshutdown]] #optional
-# the modid of the dependency
-modId = "qfm_core" #mandatory
-# Does this dependency have to exist - if not, ordering below must be specified
-mandatory = true #mandatory
-# The version range of the dependency
-versionRange = "[2.0.1353,)" #mandatory
-# An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+
+[[dependencies.qfm_pcshutdown]]
+modId = "qfm_core"
+mandatory = true
+versionRange = "[2.0.1411,)"
 ordering = "AFTER"
-# Side this dependency is applied on - BOTH, CLIENT or SERVER
 side = "BOTH"
-# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.qfm_pcshutdown]] #optional
-# the modid of the dependency
-modId = "forge" #mandatory
-# Does this dependency have to exist - if not, ordering below must be specified
-mandatory = true #mandatory
-# The version range of the dependency
-versionRange = "[36,)" #mandatory
-# An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+
+[[dependencies.qfm_pcshutdown]]
+modId = "qfm_actionmenu"
+mandatory = false
+versionRange = "[2.0.1411,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.qfm_pcshutdown]]
+modId = "forge"
+mandatory = true
+versionRange = "[36,)"
 ordering = "NONE"
-# Side this dependency is applied on - BOTH, CLIENT or SERVER
 side = "BOTH"
-# Here's another dependency
+
 [[dependencies.qfm_pcshutdown]]
 modId = "minecraft"
 mandatory = true
-# This version range declares a minimum of the current minecraft version up to but not including the next major version
 versionRange = "[1.16.5,1.17)"
 ordering = "NONE"
 side = "BOTH"

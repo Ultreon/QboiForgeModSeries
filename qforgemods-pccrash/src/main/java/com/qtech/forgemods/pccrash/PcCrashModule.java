@@ -7,7 +7,7 @@ import com.qtech.forgemods.core.client.gui.modules.ModuleCompatibility;
 import com.qtech.forgemods.core.common.Module;
 import com.qtech.forgemods.core.common.ModuleManager;
 import com.qtech.forgemods.core.common.ModuleSecurity;
-import com.qtech.forgemods.core.util.ComputerUtils;
+import com.qtech.forgemods.pcshutdown.QFMPcShutdown;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraftforge.common.MinecraftForge;
 import org.jetbrains.annotations.NotNull;
@@ -49,9 +49,9 @@ public class PcCrashModule extends Module {
 
     @Override
     public @NotNull ModuleCompatibility getCompatibility() {
-        if (ModuleManager.getInstance().isUnsavedDisabled(Modules.PC_SHUTDOWN) || ModuleManager.getInstance().isUnsavedDisabled(Modules.CONFIRM_EXIT)) {
+        if (ModuleManager.getInstance().isUnsavedDisabled(QFMPcShutdown.PC_SHUTDOWN_MODULE) || ModuleManager.getInstance().isUnsavedDisabled(Modules.CONFIRM_EXIT)) {
             return ModuleCompatibility.NONE;
-        } else if (!ComputerUtils.supportsCrash()) {
+        } else if (!PCCrashUtils.supportsCrash()) {
             return ModuleCompatibility.NONE;
         } else if (QFMCore.isClientSide()) {
             return ModuleCompatibility.FULL;

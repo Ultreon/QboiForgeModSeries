@@ -6,7 +6,6 @@ import com.mojang.text2speech.Narrator;
 import com.qtech.forgemods.core.Modules;
 import com.qtech.forgemods.core.QFMCore;
 import com.qtech.forgemods.core.common.ModuleManager;
-import com.qtech.forgemods.core.util.ComputerUtils;
 import com.qtech.forgemods.core.util.WorldUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
@@ -47,6 +46,7 @@ public class ConfirmExitScreen extends Screen {
         this.crashPcText = new TranslationTextComponent("button.qforgemod.confirm_exit.crash_pc");
     }
 
+    @SuppressWarnings("CommentedOutCode")
     protected void init() {
         super.init();
 
@@ -76,12 +76,14 @@ public class ConfirmExitScreen extends Screen {
                 this.minecraft.displayGuiScreen(backScreen);
             }
         }));
-        if (ModuleManager.getInstance().isEnabled(Modules.PC_SHUTDOWN)) {
-            this.addButton(new Button(this.width / 2 - 105, this.height / 6 + 126, 210, 20, this.shutdownPcText, (p_213006_1_) -> ComputerUtils.shutdown()));
-            if (ModuleManager.getInstance().isEnabled(Modules.PC_CRASH)) {
-                this.addButton(new Button(this.width / 2 - 105, this.height / 6 + 156, 210, 20, this.crashPcText, (p_213006_1_) -> ComputerUtils.crash()));
-            }
-        }
+
+        // Todo: move shutdown and crash buttons to their module, with a GUI init event.
+//        if (ModuleManager.getInstance().isEnabled(Modules.PC_SHUTDOWN)) {
+//            this.addButton(new Button(this.width / 2 - 105, this.height / 6 + 126, 210, 20, this.shutdownPcText, (p_213006_1_) -> ComputerUtils.shutdown()));
+//            if (ModuleManager.getInstance().isEnabled(Modules.PC_CRASH)) {
+//                this.addButton(new Button(this.width / 2 - 105, this.height / 6 + 156, 210, 20, this.crashPcText, (p_213006_1_) -> ComputerUtils.crash()));
+//            }
+//        }
 
         setButtonDelay(10);
     }

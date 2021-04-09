@@ -8,8 +8,6 @@ import com.qtech.forgemods.core.common.ModuleSecurity;
 import com.qtech.forgemods.core.common.interfaces.IHasDyeColor;
 import com.qtech.forgemods.core.common.interfaces.IHasMaterialColor;
 import com.qtech.forgemods.core.init.Registration;
-import com.qtech.forgemods.core.modules.actionmenu.MainActionMenu;
-import com.qtech.forgemods.core.modules.actionmenu.MenuHandler;
 import com.qtech.forgemods.core.modules.items.objects.base.DyeColorizedItem;
 import com.qtech.forgemods.core.modules.items.objects.base.MaterialColorizedItem;
 import com.qtech.forgemods.core.modules.items.objects.spawnegg.CustomSpawnEggItem;
@@ -34,10 +32,9 @@ import java.util.function.Supplier;
 @SuppressWarnings("unused")
 public class ItemsModule extends CoreRegisterWrapperModule<Item> {
     public static final ItemDeferredRegister ITEMS = new ItemDeferredRegister(QFMCore.modId);
-    private static final ItemMenu itemMenu = new ItemMenu();
 
     public ItemsModule() {
-        MainActionMenu.registerHandler(new MenuHandler(new StringTextComponent("Item"), itemMenu));
+
     }
 
     @Override

@@ -331,17 +331,6 @@ public class ModuleList extends ExtendedList<ModuleList.ModuleEntry> {
          int btnX = 36;
          int btnY = 12;
 
-         // ! Todo: Remove this debug information.
-         System.out.println("btnX1=" + btnX);
-         System.out.println("btnY1=" + btnY);
-         System.out.println("btnX2=" + (btnX + 19));
-         System.out.println("btnY2=" + (btnY + 20));
-         System.out.println("btnWidth=" + 19);
-         System.out.println("btnHeight=" + 20);
-         System.out.println("deltaX=" + mouseXOffset);
-         System.out.println("deltaY=" + mouseYOffset);
-         System.out.println("isPointInRegion=" + AdvancedScreen.isPointInRegion(btnX, btnY, 19, 20, mouseXOffset, mouseYOffset));
-
          if (this.module.hasOptions() && AdvancedScreen.isPointInRegion(btnX, btnY, 19, 20, mouseXOffset, mouseYOffset)) {
             this.module.showOptions(this.screen);
          }

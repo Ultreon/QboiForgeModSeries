@@ -9,8 +9,6 @@ import com.qtech.forgemods.core.common.text.Translations;
 import com.qtech.forgemods.core.config.Config;
 import com.qtech.forgemods.core.modules.ui.screens.ScreenshotsScreen;
 import com.qtech.forgemods.core.modules.ui.widgets.SwitchWidget;
-import com.qtech.forgemods.core.modules.updates.AbstractUpdater;
-import com.qtech.forgemods.core.modules.updates.UpdateButton;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.OptionsScreen;
 import net.minecraft.client.gui.screen.Screen;
@@ -66,7 +64,7 @@ public class SettingsScreen extends Screen {
         }
 
         int dy = -30;
-        addButton(new UpdateButton(AbstractUpdater.getQFMUpdater(), width / 2 - 155, height / 6 + dy - 6, 310));
+//        addButton(new UpdateButton(AbstractUpdater.getQFMUpdater(), width / 2 - 155, height / 6 + dy - 6, 310));
 
         dy += 30;
         dy += 30;

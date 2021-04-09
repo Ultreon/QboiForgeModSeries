@@ -17,7 +17,7 @@ import java.util.Collection;
 import java.util.function.Supplier;
 
 public class WorldGenerationModule extends CoreRegisterModule<Biome> {
-    public static final DeferredRegister<Biome> BIOMES = create(ForgeRegistries.BIOMES);
+    public static final DeferredRegister<Biome> BIOMES = CoreRegisterModule.create(ForgeRegistries.BIOMES);
 
     @Override
     public ModuleSecurity getSecurity() {
@@ -34,11 +34,11 @@ public class WorldGenerationModule extends CoreRegisterModule<Biome> {
         }
     }
 
-    @SubscribeEvent
-    public void onBiomeLoading(BiomeLoadingEvent event) {
-        ModGeneration.loadTrees(event);
-        ModGeneration.loadLakes(event);
-    }
+//    @SubscribeEvent
+//    public void onBiomeLoading(BiomeLoadingEvent event) {
+//        ModGeneration.loadTrees(event);
+//        ModGeneration.loadLakes(event);
+//    }
 
     public static Collection<RegistryObject<Biome>> getBiomes() {
         return BIOMES.getEntries();

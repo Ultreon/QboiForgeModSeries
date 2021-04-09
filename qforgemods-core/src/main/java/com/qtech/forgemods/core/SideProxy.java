@@ -5,7 +5,6 @@ import com.qtech.forgemods.core.config.Config;
 import com.qtech.forgemods.core.data.DataGenerators;
 import com.qtech.forgemods.core.init.*;
 import com.qtech.forgemods.core.modules.tiles.ModBlocks;
-import com.qtech.forgemods.core.modules.tiles.ModFluids;
 import com.qtech.forgemods.core.modules.items.ModItems;
 import com.qtech.forgemods.core.modules.tiles.ModMachineTileEntities;
 import com.qtech.forgemods.core.modules.ui.ModMachineContainers;
@@ -46,7 +45,7 @@ class SideProxy implements com.qtech.forgemods.core.IProxy {
 
         // Add listeners for registry events
         FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(ContainerType.class, ModMachineContainers::registerAll);
-        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Fluid.class, ModFluids::registerFluids);
+//        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Fluid.class, ModFluids::registerFluids);
         FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(TileEntityType.class, ModMachineTileEntities::registerAll);
 
         // Other events
@@ -90,7 +89,7 @@ class SideProxy implements com.qtech.forgemods.core.IProxy {
             FMLJavaModLoadingContext.get().getModEventBus().addListener(ModItems::registerItemColors);
             FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
 
-            MinecraftForge.EVENT_BUS.addListener(this::setFog);
+//            MinecraftForge.EVENT_BUS.addListener(this::setFog);
         }
 
         private void clientSetup(FMLClientSetupEvent event) {
@@ -100,30 +99,31 @@ class SideProxy implements com.qtech.forgemods.core.IProxy {
             ModModelProperties.register(event);
         }
 
-        public void setFog(EntityViewRenderEvent.FogColors fog) {
-            World w = fog.getInfo().getRenderViewEntity().getEntityWorld();
-            BlockPos pos = fog.getInfo().getBlockPos();
-            BlockState bs = w.getBlockState(pos);
-            Block b = bs.getBlock();
-
-            if (b.equals(ModBlocks.OIL)) {
-                float red = 0.02F;
-                float green = 0.02F;
-                float blue = 0.02F;
-                fog.setRed(red);
-                fog.setGreen(green);
-                fog.setBlue(blue);
-            }
-
-            if (b.equals(ModBlocks.DIESEL)) {
-                float red = 0.9F;
-                float green = 0.9F;
-                float blue = 0.02F;
-                fog.setRed(red);
-                fog.setGreen(green);
-                fog.setBlue(blue);
-            }
-        }
+        // Todo: move to 'qforgemods-materials'
+//        public void setFog(EntityViewRenderEvent.FogColors fog) {
+//            World w = fog.getInfo().getRenderViewEntity().getEntityWorld();
+//            BlockPos pos = fog.getInfo().getBlockPos();
+//            BlockState bs = w.getBlockState(pos);
+//            Block b = bs.getBlock();
+//
+//            if (b.equals(ModBlocks.OIL)) {
+//                float red = 0.02F;
+//                float green = 0.02F;
+//                float blue = 0.02F;
+//                fog.setRed(red);
+//                fog.setGreen(green);
+//                fog.setBlue(blue);
+//            }
+//
+//            if (b.equals(ModBlocks.DIESEL)) {
+//                float red = 0.9F;
+//                float green = 0.9F;
+//                float blue = 0.02F;
+//                fog.setRed(red);
+//                fog.setGreen(green);
+//                fog.setBlue(blue);
+//            }
+//        }
     }
 
     static class Server extends SideProxy {

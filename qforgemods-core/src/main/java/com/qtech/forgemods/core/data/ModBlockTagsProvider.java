@@ -6,7 +6,6 @@ import com.google.gson.JsonObject;
 import com.qtech.forgemods.core.init.ModTags;
 import com.qtech.forgemods.core.init.Registration;
 import com.qtech.forgemods.core.modules.tiles.blocks.machines.dryingrack.DryingRackBlock;
-import com.qtech.forgemods.core.modules.items.OreMaterial;
 import net.minecraft.block.Block;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
@@ -40,28 +39,28 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         super(generatorIn, modId, existingFileHelper);
     }
 
-    @SuppressWarnings("OptionalGetWithoutIsPresent")
-    @Override
-    protected void registerTags() {
-        getOrCreateBuilder(ModTags.Blocks.DRYING_RACKS).add(Registration.getBlocks(DryingRackBlock.class).toArray(new Block[0]));
+//    @SuppressWarnings("OptionalGetWithoutIsPresent")
+//    @Override
+//    protected void registerTags() {
+//        getOrCreateBuilder(ModTags.Blocks.DRYING_RACKS).add(Registration.getBlocks(DryingRackBlock.class).toArray(new Block[0]));
+//
+//        for (OreMaterial metal : OreMaterial.values()) {
+//            metal.getOreTag().ifPresent(tag ->
+//                    getOrCreateBuilder(tag).add(metal.getOre().get()));
+//            metal.getStorageBlockTag().ifPresent(tag ->
+//                    getOrCreateBuilder(tag).add(metal.getStorageBlock().get()));
+//        }
+//
+//        groupBuilder(Tags.Blocks.ORES, OreMaterial::getOreTag);
+//        groupBuilder(Tags.Blocks.STORAGE_BLOCKS, OreMaterial::getStorageBlockTag);
+//    }
 
-        for (OreMaterial metal : OreMaterial.values()) {
-            metal.getOreTag().ifPresent(tag ->
-                    getOrCreateBuilder(tag).add(metal.getOre().get()));
-            metal.getStorageBlockTag().ifPresent(tag ->
-                    getOrCreateBuilder(tag).add(metal.getStorageBlock().get()));
-        }
-
-        groupBuilder(Tags.Blocks.ORES, OreMaterial::getOreTag);
-        groupBuilder(Tags.Blocks.STORAGE_BLOCKS, OreMaterial::getStorageBlockTag);
-    }
-
-    private void groupBuilder(ITag.INamedTag<Block> tag, Function<OreMaterial, Optional<ITag.INamedTag<Block>>> tagGetter) {
-        Builder<Block> builder = getOrCreateBuilder(tag);
-        for (OreMaterial metal : OreMaterial.values()) {
-            tagGetter.apply(metal).ifPresent(builder::addTag);
-        }
-    }
+//    private void groupBuilder(ITag.INamedTag<Block> tag, Function<OreMaterial, Optional<ITag.INamedTag<Block>>> tagGetter) {
+//        Builder<Block> builder = getOrCreateBuilder(tag);
+//        for (OreMaterial metal : OreMaterial.values()) {
+//            tagGetter.apply(metal).ifPresent(builder::addTag);
+//        }
+//    }
 
     @Override
     public @NotNull String getName() {

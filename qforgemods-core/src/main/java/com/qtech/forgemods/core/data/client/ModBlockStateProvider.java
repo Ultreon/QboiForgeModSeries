@@ -3,7 +3,6 @@ package com.qtech.forgemods.core.data.client;
 import com.qtech.forgemods.core.QFMCore;
 import com.qtech.forgemods.core.modules.tiles.ModBlocks;
 import com.qtech.forgemods.core.modules.tiles.blocks.machines.dryingrack.DryingRackBlock;
-import com.qtech.forgemods.core.modules.items.OreMaterial;
 import com.qsoftware.modlib.silentlib.registry.BlockRegistryObject;
 import com.qsoftware.modlib.silentlib.util.NameUtils;
 import net.minecraft.block.Block;
@@ -31,10 +30,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        Arrays.stream(OreMaterial.values()).forEach(metal -> {
-            metal.getOre().ifPresent(this::simpleBlock);
-            metal.getStorageBlock().ifPresent(this::simpleBlock);
-        });
+//        Arrays.stream(OreMaterial.values()).forEach(metal -> {
+//            metal.getOre().ifPresent(this::simpleBlock);
+//            metal.getStorageBlock().ifPresent(this::simpleBlock);
+//        });
 
         models().withExistingParent("drying_rack", mcLoc("block/block"))
                 .texture("0", "#wood")
@@ -56,8 +55,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         dryingRack(ModBlocks.JUNGLE_DRYING_RACK.get(), "block/jungle_planks");
         dryingRack(ModBlocks.OAK_DRYING_RACK.get(), "block/oak_planks");
         dryingRack(ModBlocks.SPRUCE_DRYING_RACK.get(), "block/spruce_planks");
-        dryingRack(ModBlocks.EUCALYPTUS_DRYING_RACK.get(), "qforgemod:blocks/eucalyptus_planks");
-        dryingRack(ModBlocks.CHERRY_DRYING_RACK.get(), "qforgemod:blocks/cherry_planks");
+
+        // Todo: Move to 'qforgemods-materials'
+//        dryingRack(ModBlocks.EUCALYPTUS_DRYING_RACK.get(), "qforgemod:blocks/eucalyptus_planks");
+//        dryingRack(ModBlocks.CHERRY_DRYING_RACK.get(), "qforgemod:blocks/cherry_planks");
 
         simpleBlock(ModBlocks.STONE_MACHINE_FRAME.get(), models()
                 .withExistingParent("stone_machine_frame", modLoc("block/machine_frame"))

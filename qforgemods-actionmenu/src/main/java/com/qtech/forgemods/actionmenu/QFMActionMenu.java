@@ -8,16 +8,19 @@ import com.qtech.forgemods.core.QFMCorePlugin;
 import com.qtech.forgemods.core.QFMVersion;
 import com.qtech.forgemods.core.common.ModuleManager;
 import com.qtech.forgemods.core.internal.QfmArgs;
+import com.qtech.forgemods.core.modules.environment.EntitiesModule;
 import com.qtech.forgemods.core.plugins.AbstractPluginManager;
 import com.qtech.forgemods.core.plugins.QFMCorePluginManager;
 import lombok.Getter;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -89,6 +92,23 @@ public class QFMActionMenu implements QFMCorePlugin {
     // Plugin manager.
     private final QFMActionMenuPluginManager pluginManager = QFMActionMenuPluginManager.get();
 
+    @Getter
+    private static final MinecraftMenu minecraftMenu = new MinecraftMenu();
+
+    @Getter
+    private static final WindowMenu windowMenu = new WindowMenu();
+
+    @Getter
+    private static final EntityMenu entityMenu = new EntityMenu();
+
+    @Getter
+    private static final ItemMenu itemMenu = new ItemMenu();
+
+
+    @Getter
+    @Nullable
+    private static QFMActionMenu instance;
+
     /**
      * The QForgeUtils constructor for mod-loading.
      *
@@ -102,6 +122,16 @@ public class QFMActionMenu implements QFMCorePlugin {
 
         // Final fields.
         this.modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        modEventBus.addListener(this::clientSetup);
+
+        instance = this;
+    }
+
+    private void clientSetup(FMLClientSetupEvent event) {
+        MainActionMenu.registerHandler(new MenuHandler(new StringTextComponent("Minecraft"), minecraftMenu));
+        MainActionMenu.registerHandler(new MenuHandler(new StringTextComponent("Window"), windowMenu));
+        MainActionMenu.registerHandler(new MenuHandler(new StringTextComponent("Entity"), entityMenu/*, EntitiesModule::enableMenu*/));
+        MainActionMenu.registerHandler(new MenuHandler(new StringTextComponent("Item"), itemMenu));
     }
 
     /**
@@ -174,7 +204,7 @@ public class QFMActionMenu implements QFMCorePlugin {
 
     @Override
     public int getCoreMaxBuild() {
-        return 1363;
+        return 1430;
     }
 
     @Nullable

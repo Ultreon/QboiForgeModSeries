@@ -114,3 +114,5 @@ run/
 build/
 .gradle/
 run/
+
+/**/lombok.config

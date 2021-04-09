@@ -59,7 +59,7 @@ public class QFMPcCrash implements QFMCorePlugin {
     @Getter public static final QFMVersion version;
     @Getter private static final QfmArgs modArgs;
 
-    public static final PcCrashModule DEBUG_MENU_MODULE = new PcCrashModule();
+    public static final PcCrashModule PC_CRASH_MODULE = new PcCrashModule();
     public static final boolean MOD_TEST_PHASE = false;
 
     static {
@@ -94,7 +94,7 @@ public class QFMPcCrash implements QFMCorePlugin {
      * @see QFMPcCrash
      */
     public QFMPcCrash() {
-        ModuleManager.getInstance().register(DEBUG_MENU_MODULE);
+        ModuleManager.getInstance().register(PC_CRASH_MODULE);
         QFMCorePluginManager.get().registerPlugin(this);
 
         // Final fields.

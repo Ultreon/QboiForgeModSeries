@@ -3,7 +3,6 @@ package com.qtech.forgemods.pccrash;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.text2speech.Narrator;
 import com.qtech.forgemods.core.QFMCore;
-import com.qtech.forgemods.core.util.ComputerUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.IBidiRenderer;
@@ -55,7 +54,7 @@ public class ConfirmCrashScreen extends Screen {
         this.buttons.clear();
         this.children.clear();
 
-        if (ComputerUtils.supportsCrash()) {
+        if (PCCrashUtils.supportsCrash()) {
             this.addButton(new Button(this.width / 2 - 105, this.height / 6 + 126, 100, 20, this.yesButtonText, (p_213006_1_) -> crash.run()));
             this.addButton(new Button(this.width / 2 + 5, this.height / 6 + 126, 100, 20, this.noButtonText, (p_213006_1_) -> Minecraft.getInstance().displayGuiScreen(backScreen)));
         } else {

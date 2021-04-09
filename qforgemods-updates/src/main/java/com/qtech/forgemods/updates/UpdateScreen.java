@@ -27,7 +27,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @OnlyIn(Dist.CLIENT)
-@Mod.EventBusSubscriber(modid = QFMCore.modId, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = UpdatesReferences.modId., bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class UpdateScreen extends Screen {
     private static boolean initializedAlready = false;
     private final IBidiRenderer field_243276_q = IBidiRenderer.field_243257_a;
@@ -93,23 +93,23 @@ public class UpdateScreen extends Screen {
         OutputStream updateStream = null;
         InputStream inputStream = null;
         try {
-            QFMCore.LOGGER.info("Opening connection to the update file.");
+            QFMUpdates.LOGGER.info("Opening connection to the update file.");
             URLConnection urlConnection = url.openConnection();
 //            urlConnection.connect();
 
             String headerField = urlConnection.getHeaderField("Content-Length");
             this.totalSize = Integer.parseInt(headerField);
             progressbar.setLength(totalSize);
-            QFMCore.LOGGER.info("Total download size is: " + this.totalSize);
+            QFMUpdates.LOGGER.info("Total download size is: " + this.totalSize);
 
-            QFMCore.LOGGER.info("Loading input stream for connection...");
+            QFMUpdates.LOGGER.info("Loading input stream for connection...");
             // Url Input stream
             inputStream = urlConnection.getInputStream();
 
             // Update folder.
             File updateFolder = new File(Minecraft.getInstance().gameDir.getAbsolutePath(), "updates");
             if (!updateFolder.exists()) {
-                QFMCore.LOGGER.info("Update folder doesn't exists, creating one...");
+                QFMUpdates.LOGGER.info("Update folder doesn't exists, creating one...");
                 updateFolder.mkdirs();
             }
 
@@ -117,11 +117,11 @@ public class UpdateScreen extends Screen {
             String[] split = url.getPath().split("/");
             File updateFile = new File(updateFolder.getAbsolutePath(), split[split.length - 1]);
             if (updateFile.exists()) {
-                QFMCore.LOGGER.info("Update file already exists, deleting...");
+                QFMUpdates.LOGGER.info("Update file already exists, deleting...");
                 updateFile.delete();
             }
 
-            QFMCore.LOGGER.info("Creating file...");
+            QFMUpdates.LOGGER.info("Creating file...");
             updateFile.createNewFile();
             updateStream = new FileOutputStream(updateFile);
 
@@ -131,8 +131,8 @@ public class UpdateScreen extends Screen {
             // Get current block size.
             int currentBlockSize = blockSize;
 
-            QFMCore.LOGGER.info("Download started!");
-            QFMCore.LOGGER.info("Block size: " + currentBlockSize);
+            QFMUpdates.LOGGER.info("Download started!");
+            QFMUpdates.LOGGER.info("Block size: " + currentBlockSize);
 
             // Read data.
 //            QForgeMod.LOGGER.info("Reading data...");

@@ -2,10 +2,8 @@ package com.qtech.forgemods.core.data.client;
 
 import com.qtech.forgemods.core.QFMCore;
 import com.qtech.forgemods.core.init.Registration;
-import com.qtech.forgemods.core.modules.items.tools.Tools;
 import com.qtech.forgemods.core.modules.tiles.ModBlocks;
 import com.qtech.forgemods.core.modules.items.ModItems;
-import com.qtech.forgemods.core.modules.items.OreMaterial;
 import com.qtech.forgemods.core.modules.items.objects.CraftingItems;
 import com.qtech.forgemods.core.modules.items.objects.upgrades.MachineUpgrades;
 import com.qsoftware.modlib.silentlib.block.IBlockProvider;
@@ -39,32 +37,32 @@ public class ModItemModelProvider extends ItemModelProvider {
         ModelFile itemHandheldDouble = getExistingFile(modLoc("item/handheld_double_size"));
 
         //noinspection OverlyLongLambda
-        Arrays.stream(OreMaterial.values()).forEach(metal -> {
-            metal.getOre().ifPresent(this::blockBuilder);
-            metal.getStorageBlock().ifPresent(this::blockBuilder);
-            metal.getChunks().ifPresent(item -> builder(item, itemGenerated));
-            metal.getDust().ifPresent(item -> builder(item, itemGenerated));
-            metal.getIngot().ifPresent(item -> builder(item, itemGenerated));
-            metal.getNugget().ifPresent(item -> builder(item, itemGenerated));
-        });
-        Arrays.stream(Tools.values()).forEach(metal -> {
-            metal.getHelmet().ifPresent(item -> builder(item, itemHandheld));
-            metal.getChestplate().ifPresent(item -> builder(item, itemHandheld));
-            metal.getLeggings().ifPresent(item -> builder(item, itemHandheld));
-            metal.getBoots().ifPresent(item -> builder(item, itemHandheld));
-            metal.getSword().ifPresent(item -> builder(item, itemHandheld));
-            metal.getAxe().ifPresent(item -> builder(item, itemHandheld));
-            metal.getPickaxe().ifPresent(item -> builder(item, itemHandheld));
-            metal.getShovel().ifPresent(item -> builder(item, itemHandheld));
-            metal.getHoe().ifPresent(item -> builder(item, itemHandheld));
-            metal.getLongsword().ifPresent(item -> builder(item, itemHandheldDouble));
-            metal.getKatana().ifPresent(item -> builder(item, itemHandheld));
-            metal.getBroadsword().ifPresent(item -> builder(item, itemHandheld));
-            metal.getLumberAxe().ifPresent(item -> builder(item, itemHandheld));
-            metal.getBattleaxe().ifPresent(item -> builder(item, itemHandheld));
-            metal.getHammer().ifPresent(item -> builder(item, itemHandheld));
-            metal.getExcavator().ifPresent(item -> builder(item, itemHandheld));
-        });
+//        Arrays.stream(OreMaterial.values()).forEach(metal -> {
+//            metal.getOre().ifPresent(this::blockBuilder);
+//            metal.getStorageBlock().ifPresent(this::blockBuilder);
+//            metal.getChunks().ifPresent(item -> builder(item, itemGenerated));
+//            metal.getDust().ifPresent(item -> builder(item, itemGenerated));
+//            metal.getIngot().ifPresent(item -> builder(item, itemGenerated));
+//            metal.getNugget().ifPresent(item -> builder(item, itemGenerated));
+//        });
+//        Arrays.stream(Tools.values()).forEach(metal -> {
+//            metal.getHelmet().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getChestplate().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getLeggings().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getBoots().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getSword().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getAxe().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getPickaxe().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getShovel().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getHoe().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getLongsword().ifPresent(item -> builder(item, itemHandheldDouble));
+//            metal.getKatana().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getBroadsword().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getLumberAxe().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getBattleaxe().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getHammer().ifPresent(item -> builder(item, itemHandheld));
+//            metal.getExcavator().ifPresent(item -> builder(item, itemHandheld));
+//        });
         Arrays.stream(CraftingItems.values()).forEach(item -> builder(item, itemGenerated));
         Arrays.stream(MachineUpgrades.values()).forEach(item -> builder(item, itemGenerated));
 

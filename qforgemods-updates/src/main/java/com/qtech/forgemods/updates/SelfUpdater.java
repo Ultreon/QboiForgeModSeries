@@ -35,6 +35,6 @@ public class SelfUpdater extends AbstractUpdater<QFMVersion> {
 
     @Override
     public QFMVersion getCurrentModVersion() {
-        return QFMCore.version;
+        return QFMUpdates.version;
     }
 }

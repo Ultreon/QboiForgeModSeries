@@ -5,8 +5,6 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.qtech.forgemods.core.QFMCore;
 import com.qtech.forgemods.core.init.ModTags;
-import com.qtech.forgemods.core.modules.items.OreMaterial;
-import com.qtech.forgemods.core.modules.items.tools.Tools;
 import com.qtech.forgemods.core.modules.items.objects.CraftingItems;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
@@ -63,10 +61,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         getOrCreateBuilder(ModTags.Items.PLASTIC).add(CraftingItems.PLASTIC_SHEET.asItem());
 
-        getOrCreateBuilder(ModTags.Items.STEELS)
-                .addTag(OreMaterial.ALUMINUM_STEEL.getIngotTag().get())
-                .addTag(OreMaterial.BISMUTH_STEEL.getIngotTag().get())
-                .addTag(OreMaterial.STEEL.getIngotTag().get());
+//        getOrCreateBuilder(ModTags.Items.STEELS)
+//                .addTag(OreMaterial.ALUMINUM_STEEL.getIngotTag().get())
+//                .addTag(OreMaterial.BISMUTH_STEEL.getIngotTag().get())
+//                .addTag(OreMaterial.STEEL.getIngotTag().get());
         getOrCreateBuilder(ModTags.Items.COAL_GENERATOR_FUELS)
                 .addTag(ItemTags.COALS)
                 .addTag(itemTag(forgeId("nuggets/coal")))
@@ -74,32 +72,32 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .addTag(Tags.Items.STORAGE_BLOCKS_COAL);
         copy(ModTags.Blocks.DRYING_RACKS, ModTags.Items.DRYING_RACKS);
 
-        getOrCreateBuilder(ModTags.Items.DUSTS_COAL).add(CraftingItems.COAL_DUST.asItem());
+//        getOrCreateBuilder(ModTags.Items.DUSTS_COAL).add(CraftingItems.COAL_DUST.asItem());
 
-        for (OreMaterial metal : OreMaterial.values()) {
-            metal.getOreTag().ifPresent(tag ->
-                    copy(tag, metal.getOreItemTag().get()));
-            metal.getStorageBlockTag().ifPresent(tag ->
-                    copy(tag, metal.getStorageBlockItemTag().get()));
-            metal.getChunksTag().ifPresent(tag ->
-                    getOrCreateBuilder(tag).add(metal.getChunks().get()));
-            metal.getDustTag().ifPresent(tag ->
-                    getOrCreateBuilder(tag).add(metal.getDust().get()));
-            metal.getIngotTag().ifPresent(tag ->
-                    metal.getIngot().ifPresent(item ->
-                            getOrCreateBuilder(tag).add(item)));
-            metal.getNuggetTag().ifPresent(tag ->
-                    metal.getNugget().ifPresent(item ->
-                            getOrCreateBuilder(tag).add(item)));
-        }
+//        for (OreMaterial metal : OreMaterial.values()) {
+//            metal.getOreTag().ifPresent(tag ->
+//                    copy(tag, metal.getOreItemTag().get()));
+//            metal.getStorageBlockTag().ifPresent(tag ->
+//                    copy(tag, metal.getStorageBlockItemTag().get()));
+//            metal.getChunksTag().ifPresent(tag ->
+//                    getOrCreateBuilder(tag).add(metal.getChunks().get()));
+//            metal.getDustTag().ifPresent(tag ->
+//                    getOrCreateBuilder(tag).add(metal.getDust().get()));
+//            metal.getIngotTag().ifPresent(tag ->
+//                    metal.getIngot().ifPresent(item ->
+//                            getOrCreateBuilder(tag).add(item)));
+//            metal.getNuggetTag().ifPresent(tag ->
+//                    metal.getNugget().ifPresent(item ->
+//                            getOrCreateBuilder(tag).add(item)));
+//        }
 
         copy(Tags.Blocks.ORES, Tags.Items.ORES);
         copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
-        groupBuilder(ModTags.Items.CHUNKS, OreMaterial::getChunksTag);
-        groupBuilder(Tags.Items.DUSTS, OreMaterial::getDustTag,
-                ModTags.Items.DUSTS_COAL);
-        groupBuilder(Tags.Items.INGOTS, OreMaterial::getIngotTag);
-        groupBuilder(Tags.Items.NUGGETS, OreMaterial::getNuggetTag);
+//        groupBuilder(ModTags.Items.CHUNKS, OreMaterial::getChunksTag);
+//        groupBuilder(Tags.Items.DUSTS, OreMaterial::getDustTag,
+//                ModTags.Items.DUSTS_COAL);
+//        groupBuilder(Tags.Items.INGOTS, OreMaterial::getIngotTag);
+//        groupBuilder(Tags.Items.NUGGETS, OreMaterial::getNuggetTag);
 
         Builder<Item> swords = getOrCreateBuilder(itemTag(new ResourceLocation(modId, "tools/swords")));
         Builder<Item> axes = getOrCreateBuilder(itemTag(new ResourceLocation(modId, "tools/axes")));
@@ -113,33 +111,32 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         Builder<Item> lumberAxes = getOrCreateBuilder(itemTag(new ResourceLocation(modId, "tools/lumber_axes")));
         Builder<Item> excavators = getOrCreateBuilder(itemTag(new ResourceLocation(modId, "tools/excavators")));
         Builder<Item> hammers = getOrCreateBuilder(itemTag(new ResourceLocation(modId, "tools/hammers")));
-        for (Tools tools : Tools.values()) {
-            swords.add(tools.getSword().get());
-            axes.add(tools.getAxe().get());
-            pickaxes.add(tools.getPickaxe().get());
-            shovels.add(tools.getShovel().get());
-            hoes.add(tools.getHoe().get());
-            longswords.add(tools.getLongsword().get());
-            broadswords.add(tools.getBroadsword().get());
-            katanas.add(tools.getKatana().get());
-            battleaxes.add(tools.getBattleaxe().get());
-            lumberAxes.add(tools.getLumberAxe().get());
-            excavators.add(tools.getExcavator().get());
-            hammers.add(tools.getHammer().get());
-        }
+//        for (Tools tools : Tools.values()) {
+//            swords.add(tools.getSword().get());
+//            axes.add(tools.getAxe().get());
+//            pickaxes.add(tools.getPickaxe().get());
+//            shovels.add(tools.getShovel().get());
+//            hoes.add(tools.getHoe().get());
+//            longswords.add(tools.getLongsword().get());
+//            broadswords.add(tools.getBroadsword().get());
+//            katanas.add(tools.getKatana().get());
+//            battleaxes.add(tools.getBattleaxe().get());
+//            lumberAxes.add(tools.getLumberAxe().get());
+//            excavators.add(tools.getExcavator().get());
+//            hammers.add(tools.getHammer().get());
+//        }
     }
 
-    @SafeVarargs
-
-    private final void groupBuilder(ITag.INamedTag<Item> tag, Function<OreMaterial, Optional<ITag.INamedTag<Item>>> tagGetter, ITag.INamedTag<Item>... extras) {
-        Builder<Item> builder = getOrCreateBuilder(tag);
-        for (OreMaterial metal : OreMaterial.values()) {
-            tagGetter.apply(metal).ifPresent(builder::addTag);
-        }
-        for (ITag.INamedTag<Item> extraTag : extras) {
-            builder.addTag(extraTag);
-        }
-    }
+//    @SafeVarargs
+//    private final void groupBuilder(ITag.INamedTag<Item> tag, Function<OreMaterial, Optional<ITag.INamedTag<Item>>> tagGetter, ITag.INamedTag<Item>... extras) {
+//        Builder<Item> builder = getOrCreateBuilder(tag);
+//        for (OreMaterial metal : OreMaterial.values()) {
+//            tagGetter.apply(metal).ifPresent(builder::addTag);
+//        }
+//        for (ITag.INamedTag<Item> extraTag : extras) {
+//            builder.addTag(extraTag);
+//        }
+//    }
 
     private void builder(ResourceLocation id, IItemProvider... items) {
         getOrCreateBuilder(itemTag(id)).add(Arrays.stream(items).map(IItemProvider::asItem).toArray(Item[]::new));

@@ -216,16 +216,16 @@ public abstract class AbstractUpdater<T extends IVersion> {
                 // Get Minecraft versions.
                 JsonObject mcVersions = gson.fromJson(targetReader, JsonObject.class).get("mc_versions").getAsJsonObject();
                 if (DEBUG) {
-                    QFMCore.LOGGER.debug("===================================================");
-                    QFMCore.LOGGER.debug("Update Data:");
-                    QFMCore.LOGGER.debug("---------------------------------------------------");
-                    QFMCore.LOGGER.debug(mcVersions.toString());
-                    QFMCore.LOGGER.debug("===================================================");
+                    QFMUpdates.LOGGER.debug("===================================================");
+                    QFMUpdates.LOGGER.debug("Update Data:");
+                    QFMUpdates.LOGGER.debug("---------------------------------------------------");
+                    QFMUpdates.LOGGER.debug(mcVersions.toString());
+                    QFMUpdates.LOGGER.debug("===================================================");
                 }
 
                 // Get latest Mod version.
                 JsonObject versionIndex = mcVersions.getAsJsonObject(id);
-                JsonObject releaseIndex = versionIndex.getAsJsonObject(QFMCore.version.isStable() ? "stable" : "unstable");
+                JsonObject releaseIndex = versionIndex.getAsJsonObject(QFMUpdates.version.isStable() ? "stable" : "unstable");
                 JsonPrimitive latestJson = releaseIndex.getAsJsonPrimitive("version");
 
                 // Get version download url.

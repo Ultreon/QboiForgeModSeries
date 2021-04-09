@@ -12,8 +12,6 @@ import org.apache.commons.lang3.StringUtils;
 import javax.annotation.Nullable;
 
 public enum CraftingItems implements IItemProvider {
-    // Other dusts
-    COAL_DUST,
     // Crafting items
     CIRCUIT_BOARD,
     HEATING_ELEMENT,

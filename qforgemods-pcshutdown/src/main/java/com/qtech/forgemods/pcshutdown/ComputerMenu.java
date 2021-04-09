@@ -1,11 +1,9 @@
 package com.qtech.forgemods.pcshutdown;
 
-import com.qtech.forgemods.core.Modules;
+import com.qtech.forgemods.actionmenu.AbstractActionMenu;
+import com.qtech.forgemods.actionmenu.IActionMenuItem;
 import com.qtech.forgemods.core.common.ModuleManager;
-import com.qtech.forgemods.core.modules.actionmenu.AbstractActionMenu;
-import com.qtech.forgemods.core.modules.actionmenu.IActionMenuItem;
-import com.qtech.forgemods.core.modules.debugMenu.DebugMenu;
-import com.qtech.forgemods.core.util.ComputerUtils;
+import com.qtech.forgemods.debugmenu.DebugMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -15,7 +13,7 @@ public class ComputerMenu extends AbstractActionMenu {
         addItem(new IActionMenuItem() {
             @Override
             public void onActivate() {
-                ComputerUtils.shutdown();
+                PCPowerUtils.shutdown();
             }
 
             @Override
@@ -25,13 +23,13 @@ public class ComputerMenu extends AbstractActionMenu {
 
             @Override
             public boolean isEnabled() {
-                return ModuleManager.getInstance().isEnabled(Modules.PC_SHUTDOWN);
+                return ModuleManager.getInstance().isEnabled(QFMPcShutdown.PC_SHUTDOWN_MODULE);
             }
         });
         addItem(new IActionMenuItem() {
             @Override
             public void onActivate() {
-                ComputerUtils.hibernate();
+                PCPowerUtils.hibernate();
             }
 
             @Override
@@ -41,13 +39,13 @@ public class ComputerMenu extends AbstractActionMenu {
 
             @Override
             public boolean isEnabled() {
-                return ModuleManager.getInstance().isEnabled(Modules.PC_SHUTDOWN) && ComputerUtils.supportsHibernate();
+                return ModuleManager.getInstance().isEnabled(QFMPcShutdown.PC_SHUTDOWN_MODULE) && PCPowerUtils.supportsHibernate();
             }
         });
         addItem(new IActionMenuItem() {
             @Override
             public void onActivate() {
-                ComputerUtils.reboot();
+                PCPowerUtils.reboot();
             }
 
             @Override
@@ -57,25 +55,25 @@ public class ComputerMenu extends AbstractActionMenu {
 
             @Override
             public boolean isEnabled() {
-                return ModuleManager.getInstance().isEnabled(Modules.PC_SHUTDOWN) && ComputerUtils.supportsReboot();
+                return ModuleManager.getInstance().isEnabled(QFMPcShutdown.PC_SHUTDOWN_MODULE) && PCPowerUtils.supportsReboot();
             }
         });
-        addItem(new IActionMenuItem() {
-            @Override
-            public void onActivate() {
-                ComputerUtils.crash();
-            }
-
-            @Override
-            public ITextComponent getText() {
-                return new StringTextComponent("Crash");
-            }
-
-            @Override
-            public boolean isEnabled() {
-                return ModuleManager.getInstance().isEnabled(Modules.PC_CRASH) && ComputerUtils.supportsCrash();
-            }
-        });
+//        addItem(new IActionMenuItem() {
+//            @Override
+//            public void onActivate() {
+//                PCPowerUtils.crash();
+//            }
+//
+//            @Override
+//            public ITextComponent getText() {
+//                return new StringTextComponent("Crash");
+//            }
+//
+//            @Override
+//            public boolean isEnabled() {
+//                return ModuleManager.getInstance().isEnabled(QFMPcShutdown.PC_SHUTDOWN_MODULE) && PCPowerUtils.supportsCrash();
+//            }
+//        });
         addItem(new IActionMenuItem() {
             @Override
             public void onActivate() {
