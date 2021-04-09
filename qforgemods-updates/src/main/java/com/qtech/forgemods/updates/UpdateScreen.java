@@ -2,12 +2,7 @@ package com.qtech.forgemods.updates;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.text2speech.Narrator;
-import com.qtech.forgemods.core.QFMCore;
 import com.qtech.forgemods.core.modules.ui.widgets.Progressbar;
-import com.qtech.forgemods.core.modules.updates.Dependencies;
-import com.qtech.forgemods.core.modules.updates.Dependency;
-import com.qtech.forgemods.core.modules.updates.UpdateDownloadedScreen;
-import com.qtech.forgemods.core.modules.updates.UpdateFailedScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.IBidiRenderer;
@@ -27,7 +22,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @OnlyIn(Dist.CLIENT)
-@Mod.EventBusSubscriber(modid = UpdatesReferences.modId., bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = UpdatesReferences.modId, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class UpdateScreen extends Screen {
     private static boolean initializedAlready = false;
     private final IBidiRenderer field_243276_q = IBidiRenderer.field_243257_a;

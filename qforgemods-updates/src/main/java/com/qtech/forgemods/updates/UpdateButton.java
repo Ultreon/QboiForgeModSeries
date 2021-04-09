@@ -3,8 +3,6 @@ package com.qtech.forgemods.updates;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.qtech.forgemods.core.QFMCore;
 import com.qtech.forgemods.core.modules.ui.widgets.BetterButton;
-import com.qtech.forgemods.core.modules.updates.AbstractUpdater;
-import com.qtech.forgemods.core.modules.updates.UpdateScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.jetbrains.annotations.NotNull;
@@ -15,10 +13,10 @@ public class UpdateButton extends BetterButton {
     public UpdateButton(AbstractUpdater<?> updater, int x, int y, int width) {
         super(x, y, width, new TranslationTextComponent("button." + updater.getModInfo().getModId() + ".update"), (button) -> {
             Minecraft mc = Minecraft.getInstance();
-            mc.displayGuiScreen(new com.qtech.forgemods.core.modules.updates.UpdateScreen(mc.currentScreen, updater.getReleaseUrl(), updater.getDependencies()));
+            mc.displayGuiScreen(new UpdateScreen(mc.currentScreen, updater.getReleaseUrl(), updater.getDependencies()));
         });
         this.updater = updater;
-        this.active = updater == AbstractUpdater.getQFMUpdater() ? !QFMCore.isDevtest() && updater.hasUpdate() : updater.hasUpdate();
+        this.active = updater == AbstractUpdater.getInternalUpdater() ? !QFMUpdates.isDevtest() && updater.hasUpdate() : updater.hasUpdate();
     }
 
     public UpdateButton(AbstractUpdater<?> updater, int x, int y, int width, ITooltip onTooltip) {

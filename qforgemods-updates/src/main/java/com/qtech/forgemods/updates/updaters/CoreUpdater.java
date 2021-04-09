@@ -2,7 +2,7 @@ package com.qtech.forgemods.updates.updaters;
 
 import com.qtech.forgemods.core.QFMCore;
 import com.qtech.forgemods.core.QFMVersion;
-import com.qtech.forgemods.core.modules.updates.AbstractUpdater;
+import com.qtech.forgemods.updates.AbstractUpdater;
 
 import java.net.MalformedURLException;
 import java.net.URL;

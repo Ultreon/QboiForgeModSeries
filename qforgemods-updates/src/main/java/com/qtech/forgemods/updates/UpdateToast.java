@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
+@SuppressWarnings("deprecation")
 public class UpdateToast implements IToast {
     private ImmutableList<IReorderingProcessor> subtitle;
     private ITextComponent title;

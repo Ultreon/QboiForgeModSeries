@@ -39,12 +39,13 @@
         </processorPath>
         <module name="pccrash.main" />
       </profile>
-      <profile name="Gradle Imported" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.18/481f5bfed3ae29f656eedfe9e98c8365b8ba5c57/lombok-1.18.18.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.graalvm.truffle/truffle-dsl-processor/19.3.5/8cd684c90a516947ca68c14754c00154ae77f3cd/truffle-dsl-processor-19.3.5.jar" />
-        </processorPath>
+        <module name="updates" />
+        <module name="core" />
+        <module name="actionmenu" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -149,7 +149,7 @@ public class UpdatesModule extends Module {
             Screen gui = event.getGui();
 
             // Return if already initialized.
-            if (com.qtech.forgemods.core.modules.updates.UpdateAvailableScreen.isInitializedBefore()) {
+            if (UpdateAvailableScreen.isInitializedBefore()) {
                 return;
             }
 

@@ -5,8 +5,6 @@ import com.qtech.forgemods.core.QFMCore;
 import com.qtech.forgemods.core.QFMVersion;
 import com.qtech.forgemods.core.graphics.MCGraphics;
 import com.qtech.forgemods.core.modules.ui.screens.AdvancedScreen;
-import com.qtech.forgemods.core.modules.updates.AbstractUpdater;
-import com.qtech.forgemods.core.modules.updates.UpdateScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.IBidiRenderer;
@@ -33,10 +31,10 @@ import java.util.Objects;
  * @author Qboi123
  */
 @OnlyIn(Dist.CLIENT)
-@Mod.EventBusSubscriber(modid = UpdatesReferences.modId., bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = UpdatesReferences.modId, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class UpdateAvailableScreen extends AdvancedScreen {
     // Icons.
-    private static final ResourceLocation SCREEN_ICONS = new ResourceLocation(UpdatesReferences.modId., "textures/gui/icons.png");
+    private static final ResourceLocation SCREEN_ICONS = new ResourceLocation(UpdatesReferences.modId, "textures/gui/icons.png");
 
     // Flags.
     private static boolean initializedBefore = false;
@@ -213,7 +211,7 @@ public class UpdateAvailableScreen extends AdvancedScreen {
         }
 
         // Get QForgeMod updater instance.
-        AbstractUpdater<QFMVersion> updater = AbstractUpdater.getQFMUpdater();
+        AbstractUpdater<QFMVersion> updater = AbstractUpdater.getInternalUpdater();
 
         // Check for QForgeMod updates.
         AbstractUpdater.UpdateInfo updateInfo = updater.checkForUpdates();
