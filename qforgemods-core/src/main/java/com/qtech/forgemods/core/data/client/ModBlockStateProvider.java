@@ -62,16 +62,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         simpleBlock(ModBlocks.STONE_MACHINE_FRAME.get(), models()
                 .withExistingParent("stone_machine_frame", modLoc("block/machine_frame"))
-                .texture("all", "qforgemod:blocks/machine_frame/stone"));
+                .texture("all", "qfm_core:blocks/machine_frame/stone"));
         simpleBlock(ModBlocks.ALLOY_MACHINE_FRAME.get(), models()
                 .withExistingParent("alloy_machine_frame", modLoc("block/machine_frame"))
-                .texture("all", "qforgemod:blocks/machine_frame/alloy"));
+                .texture("all", "qfm_core:blocks/machine_frame/alloy"));
         for (BlockRegistryObject<Block> block : ModBlocks.BOOKSHELFS) {
             QFMCore.LOGGER.info("Generating block state and model for " + block.getRegistryName());
             simpleBlock(block.get(), models()
                     .withExistingParent(block.getName(), mcLoc("block/cube_column"))
                     .texture("end", "minecraft:block/oak_planks")
-                    .texture("side", "qforgemod:blocks/bookshelfs/" + block.getName()));
+                    .texture("side", "qfm_core:blocks/bookshelfs/" + block.getName()));
         }
     }
 

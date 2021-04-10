@@ -1,10 +1,10 @@
 package com.qtech.forgemods.materials.data.client;
 
-import com.qsoftware.modlib.silentlib.registry.BlockRegistryObject;
 import com.qsoftware.modlib.silentlib.util.NameUtils;
-import com.qtech.forgemods.core.QFMCore;
-import com.qtech.forgemods.core.modules.tiles.ModBlocks;
 import com.qtech.forgemods.core.modules.tiles.blocks.machines.dryingrack.DryingRackBlock;
+import com.qtech.forgemods.materials.MaterialsBlocks;
+import com.qtech.forgemods.materials.OreMaterial;
+import com.qtech.forgemods.materials.QFMMaterials;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.Direction;
@@ -49,28 +49,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .face(Direction.EAST).uvs(0, 0, 4, 4).texture("#0").end()
                 .end();
 
-        dryingRack(ModBlocks.ACACIA_DRYING_RACK.get(), "block/acacia_planks");
-        dryingRack(ModBlocks.BIRCH_DRYING_RACK.get(), "block/birch_planks");
-        dryingRack(ModBlocks.DARK_OAK_DRYING_RACK.get(), "block/dark_oak_planks");
-        dryingRack(ModBlocks.JUNGLE_DRYING_RACK.get(), "block/jungle_planks");
-        dryingRack(ModBlocks.OAK_DRYING_RACK.get(), "block/oak_planks");
-        dryingRack(ModBlocks.SPRUCE_DRYING_RACK.get(), "block/spruce_planks");
-        dryingRack(ModBlocks.EUCALYPTUS_DRYING_RACK.get(), "qfm_materials:blocks/eucalyptus_planks");
-        dryingRack(ModBlocks.CHERRY_DRYING_RACK.get(), "qfm_materials:blocks/cherry_planks");
-
-        simpleBlock(ModBlocks.STONE_MACHINE_FRAME.get(), models()
-                .withExistingParent("stone_machine_frame", modLoc("block/machine_frame"))
-                .texture("all", "qfm_materials:blocks/machine_frame/stone"));
-        simpleBlock(ModBlocks.ALLOY_MACHINE_FRAME.get(), models()
-                .withExistingParent("alloy_machine_frame", modLoc("block/machine_frame"))
-                .texture("all", "qfm_materials:blocks/machine_frame/alloy"));
-        for (BlockRegistryObject<Block> block : ModBlocks.BOOKSHELFS) {
-            QFMMaterials.LOGGER.info("Generating block state and model for " + block.getRegistryName());
-            simpleBlock(block.get(), models()
-                    .withExistingParent(block.getName(), mcLoc("block/cube_column"))
-                    .texture("end", "minecraft:block/oak_planks")
-                    .texture("side", "qfm_materials:blocks/bookshelfs/" + block.getName()));
-        }
+        dryingRack(MaterialsBlocks.EUCALYPTUS_DRYING_RACK.get(), "qfm_materials:blocks/eucalyptus_planks");
+        dryingRack(MaterialsBlocks.CHERRY_DRYING_RACK.get(), "qfm_materials:blocks/cherry_planks");
     }
 
     private void dryingRack(DryingRackBlock block, String texture) {

@@ -83,11 +83,11 @@ public class SettingsScreen extends Screen {
     }
 
     private void openModulesScreen(Button button) {
-        Objects.requireNonNull(this.minecraft).displayGuiScreen(new ModuleScreen(this, ModuleManager.getInstance(), new TranslationTextComponent("screen.qforgemod.modules")));
+        Objects.requireNonNull(this.minecraft).displayGuiScreen(new ModuleScreen(this, ModuleManager.getInstance(), new TranslationTextComponent("screen.qfm_core.modules")));
     }
 
     private void openScreenshotsScreen(Button button) {
-        Objects.requireNonNull(this.minecraft).displayGuiScreen(new ScreenshotsScreen(this, new TranslationTextComponent("screen.qforgemod.modules")));
+        Objects.requireNonNull(this.minecraft).displayGuiScreen(new ScreenshotsScreen(this, new TranslationTextComponent("screen.qfm_core.modules")));
     }
 
     @Override

@@ -53,7 +53,7 @@ public class QFMMaterials implements QFMCorePlugin {
     /**
      * QFM: Materials's Logger
      */
-    public static final Logger LOGGER = LogManager.getLogger("QFM:Generic");
+    public static final Logger LOGGER = LogManager.getLogger("QFM:Materials");
 
     /**
      * Unused.
@@ -73,7 +73,8 @@ public class QFMMaterials implements QFMCorePlugin {
 
     // Mod Data
     @Getter public static final String modId = "qfm_materials";
-    @Getter public static final String modName = "Qboi's Forge Mods: Materials";
+    @Getter public static final String modNameLong = "Qboi's Forge Mods: Materials";
+    @Getter public static final String modName = "QFM: Materials";
     @Getter public static final String nbtName = "QFMMaterials";
     @Getter public static final String modVersion;
     @Getter public static final QFMVersion version;

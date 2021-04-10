@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class GemsItemGroup extends ItemGroup {
-    public static final GemsItemGroup instance = new GemsItemGroup(ItemGroup.GROUPS.length, "qforgemod_gems");
+    public static final GemsItemGroup instance = new GemsItemGroup(ItemGroup.GROUPS.length, "qfm_core_gems");
 
     public GemsItemGroup(int index, String label) {
         super(index, label);

@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class MiscellaneousItemGroup extends ItemGroup {
-    public static final MiscellaneousItemGroup instance = new MiscellaneousItemGroup(ItemGroup.GROUPS.length, "qforgemod_misc");
+    public static final MiscellaneousItemGroup instance = new MiscellaneousItemGroup(ItemGroup.GROUPS.length, "qfm_core_misc");
 
     public MiscellaneousItemGroup(int index, String label) {
         super(index, label);

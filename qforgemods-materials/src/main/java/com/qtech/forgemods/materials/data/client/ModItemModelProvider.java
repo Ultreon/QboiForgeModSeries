@@ -1,14 +1,9 @@
 package com.qtech.forgemods.materials.data.client;
 
-import com.qsoftware.modlib.silentlib.block.IBlockProvider;
 import com.qsoftware.modlib.silentlib.util.NameUtils;
-import com.qtech.forgemods.core.QFMCore;
-import com.qtech.forgemods.core.init.Registration;
-import com.qtech.forgemods.core.modules.items.ModItems;
 import com.qtech.forgemods.core.modules.items.objects.CraftingItems;
 import com.qtech.forgemods.core.modules.items.objects.upgrades.MachineUpgrades;
-import com.qtech.forgemods.core.modules.items.tools.Tools;
-import com.qtech.forgemods.core.modules.tiles.ModBlocks;
+import com.qtech.forgemods.materials.*;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.IItemProvider;
@@ -46,45 +41,14 @@ public class ModItemModelProvider extends ItemModelProvider {
             metal.getIngot().ifPresent(item -> builder(item, itemGenerated));
             metal.getNugget().ifPresent(item -> builder(item, itemGenerated));
         });
-        Arrays.stream(Tools.values()).forEach(metal -> {
-            metal.getHelmet().ifPresent(item -> builder(item, itemHandheld));
-            metal.getChestplate().ifPresent(item -> builder(item, itemHandheld));
-            metal.getLeggings().ifPresent(item -> builder(item, itemHandheld));
-            metal.getBoots().ifPresent(item -> builder(item, itemHandheld));
-            metal.getSword().ifPresent(item -> builder(item, itemHandheld));
-            metal.getAxe().ifPresent(item -> builder(item, itemHandheld));
-            metal.getPickaxe().ifPresent(item -> builder(item, itemHandheld));
-            metal.getShovel().ifPresent(item -> builder(item, itemHandheld));
-            metal.getHoe().ifPresent(item -> builder(item, itemHandheld));
-            metal.getLongsword().ifPresent(item -> builder(item, itemHandheldDouble));
-            metal.getKatana().ifPresent(item -> builder(item, itemHandheld));
-            metal.getBroadsword().ifPresent(item -> builder(item, itemHandheld));
-            metal.getLumberAxe().ifPresent(item -> builder(item, itemHandheld));
-            metal.getBattleaxe().ifPresent(item -> builder(item, itemHandheld));
-            metal.getHammer().ifPresent(item -> builder(item, itemHandheld));
-            metal.getExcavator().ifPresent(item -> builder(item, itemHandheld));
-        });
         Arrays.stream(CraftingItems.values()).forEach(item -> builder(item, itemGenerated));
         Arrays.stream(MachineUpgrades.values()).forEach(item -> builder(item, itemGenerated));
-
-        builder(ModItems.WRENCH, itemGenerated);
-        builder(ModItems.DEBUG_ITEM, itemGenerated);
-        builder(ModItems.BATTERY, itemGenerated);
-        builder(ModItems.HAND_PUMP, itemGenerated);
-    }
-
-    private void blockBuilder(IBlockProvider block) {
-        blockBuilder(block.asBlock());
     }
 
     private void blockBuilder(Block block) {
         try {
             String name = NameUtils.from(block).getPath();
-            if (block == ModBlocks.BATTERY_BOX.get()) {
-                withExistingParent(name, modLoc("block/" + name + "_6"));
-            } else {
-                withExistingParent(name, modLoc("block/" + name));
-            }
+            withExistingParent(name, modLoc("block/" + name));
         } catch (IllegalStateException ignored) {
 
         }

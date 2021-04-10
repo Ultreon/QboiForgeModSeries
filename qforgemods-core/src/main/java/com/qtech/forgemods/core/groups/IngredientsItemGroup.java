@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class IngredientsItemGroup extends ItemGroup {
-    public static final IngredientsItemGroup instance = new IngredientsItemGroup(ItemGroup.GROUPS.length, "qforgemod_ingredients");
+    public static final IngredientsItemGroup instance = new IngredientsItemGroup(ItemGroup.GROUPS.length, "qfm_core_ingredients");
 
     public IngredientsItemGroup(int index, String label) {
         super(index, label);

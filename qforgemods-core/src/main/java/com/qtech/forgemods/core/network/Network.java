@@ -9,7 +9,7 @@ import java.util.Objects;
 
 @SuppressWarnings("UnusedAssignment")
 public final class Network {
-    private static final String VERSION = "qforgemod-net1";
+    private static final String VERSION = "qfm_core-net1";
 
     public static SimpleChannel channel;
 

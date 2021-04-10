@@ -3,7 +3,6 @@ package com.qtech.forgemods.materials;
 import com.qsoftware.modlib.silentlib.registry.BlockRegistryObject;
 import com.qsoftware.modlib.silentlib.registry.ItemRegistryObject;
 import com.qtech.forgemods.core.modules.tiles.blocks.machines.MetalBlock;
-import com.qtech.forgemods.materials.items.tools.Tools;
 import com.qtech.forgemods.materials.ores.DefaultOre;
 import com.qtech.forgemods.materials.ores.IOre;
 import com.qtech.forgemods.materials.ores.Ores;
@@ -308,8 +307,6 @@ public enum OreMaterial implements IOreMaterial {
         ITag.INamedTag<Item> gemTag;
         ITag.INamedTag<Item> nuggetTag;
 
-        Supplier<Tools> tools;
-
         Builder(String name) {
             this.name = name;
         }
@@ -334,11 +331,6 @@ public enum OreMaterial implements IOreMaterial {
                     .hardnessAndResistance(ore.getHardness(), 3)
                     .sound(SoundType.STONE));
             this.oreTag = blockTag("ores/" + name);
-            return this;
-        }
-
-        Builder tools(Supplier<Tools> tools) {
-            this.tools = tools;
             return this;
         }
 

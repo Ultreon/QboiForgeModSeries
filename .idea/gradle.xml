@@ -6,7 +6,6 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -16,6 +15,7 @@
             <option value="$PROJECT_DIR$/qforgemods-materials" />
             <option value="$PROJECT_DIR$/qforgemods-pccrash" />
             <option value="$PROJECT_DIR$/qforgemods-pcshutdown" />
+            <option value="$PROJECT_DIR$/qforgemods-tools" />
             <option value="$PROJECT_DIR$/qforgemods-updates" />
           </set>
         </option>
@@ -23,7 +23,6 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/qforgemods-actionmenu" />
-        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/qforgemods-actionmenu" />
@@ -33,7 +32,6 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/qforgemods-core" />
-        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/qforgemods-core" />
@@ -43,7 +41,6 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/qforgemods-debugmenu" />
-        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/qforgemods-debugmenu" />
@@ -53,7 +50,6 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/qforgemods-materials" />
-        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/qforgemods-materials" />
@@ -63,7 +59,6 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/qforgemods-pccrash" />
-        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/qforgemods-pccrash" />
@@ -73,7 +68,6 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/qforgemods-pcshutdown" />
-        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/qforgemods-pcshutdown" />
@@ -82,8 +76,16 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/qforgemods-tools" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/qforgemods-tools" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/qforgemods-updates" />
-        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/qforgemods-updates" />

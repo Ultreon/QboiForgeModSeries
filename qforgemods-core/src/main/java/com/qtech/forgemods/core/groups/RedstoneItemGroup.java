@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class RedstoneItemGroup extends ItemGroup {
-    public static final RedstoneItemGroup instance = new RedstoneItemGroup(ItemGroup.GROUPS.length, "qforgemod_redstone");
+    public static final RedstoneItemGroup instance = new RedstoneItemGroup(ItemGroup.GROUPS.length, "qfm_core_redstone");
 
     public RedstoneItemGroup(int index, String label) {
         super(index, label);

@@ -65,7 +65,7 @@ public class QFMCore implements QFMCorePlugin {
     /**
      * QForgeMod's Logger
      */
-    public static final Logger LOGGER = LogManager.getLogger("QFM:Generic");
+    public static final Logger LOGGER = LogManager.getLogger("QFM:Core");
 
     /**
      * Unused.
@@ -292,7 +292,7 @@ public class QFMCore implements QFMCorePlugin {
      * @param event a {@link InterModEnqueueEvent} object.
      */
     private void enqueueIMC(final InterModEnqueueEvent event) {
-        InterModComms.sendTo("qforgemod", "helloworld", () -> {
+        InterModComms.sendTo("qfm_core", "helloworld", () -> {
             LOGGER.info("Hello world from the MDK");
             return "Hello world";
         });

@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class WoodItemGroup extends ItemGroup {
-    public static final WoodItemGroup instance = new WoodItemGroup(ItemGroup.GROUPS.length, "qforgemod_wood");
+    public static final WoodItemGroup instance = new WoodItemGroup(ItemGroup.GROUPS.length, "qfm_core_wood");
 
     public WoodItemGroup(int index, String label) {
         super(index, label);

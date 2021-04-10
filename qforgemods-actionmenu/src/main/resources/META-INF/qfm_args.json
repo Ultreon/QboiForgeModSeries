@@ -11,7 +11,7 @@
       "stage_release": 6
    },
    "build_info": {
-      "date": "2021-04-09T01:12:29.998871200",
+      "date": "2021-04-09T22:57:51.965",
       "compile": {
          "name": "compileJava",
          "source_compat": "1.8",
@@ -21,8 +21,8 @@
          }
       },
       "project": {
-         "name": "qforgemods-actionmenu",
-         "display_name": "project \u0027:qforgemods-actionmenu\u0027",
+         "name": "actionmenu",
+         "display_name": "root project \u0027actionmenu\u0027",
          "minecraft": {
             "mappings_version": "20210309-1.16.5",
             "mappings_channel": "snapshot",

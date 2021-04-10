@@ -53,12 +53,13 @@ public class QFMDebugMenu implements QFMCorePlugin {
     /**
      * QForgeMod's Logger
      */
-    public static final Logger LOGGER = LogManager.getLogger("QFM:Generic");
+    public static final Logger LOGGER = LogManager.getLogger("QFM:DebugMenu");
 
     // Mod Data
     @Getter public static final String modId = "qfm_debugmenu";
-    @Getter public static final String modName = "Qboi's Forge Mods: Debug Menu";
-    @Getter public static final String nbtName = "QFMCore";
+    @Getter public static final String modNameLong = "Qboi's Forge Mods: Debug Menu";
+    @Getter public static final String modName = "QFM: Debug Menu";
+    @Getter public static final String nbtName = "QFMDebugMenu";
     @Getter public static final String modVersion;
     @Getter public static final QFMVersion version;
     @Getter private static final QfmArgs modArgs;

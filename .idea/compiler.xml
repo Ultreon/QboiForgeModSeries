@@ -13,6 +13,7 @@
         <module name="qforgemods.qforgemods-actionmenu.test" />
         <module name="qforgemods.test" />
         <module name="qforgemods.qforgemods-pcshutdown.test" />
+        <module name="qforgemods.qforgemods-tools.test" />
         <module name="qforgemods.qforgemods-materials.test" />
         <module name="qforgemods.qforgemods-core.test" />
       </profile>
@@ -22,6 +23,7 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.18/481f5bfed3ae29f656eedfe9e98c8365b8ba5c57/lombok-1.18.18.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.graalvm.truffle/truffle-dsl-processor/19.3.5/8cd684c90a516947ca68c14754c00154ae77f3cd/truffle-dsl-processor-19.3.5.jar" />
         </processorPath>
+        <module name="qforgemods.qforgemods-tools.main" />
         <module name="qforgemods.qforgemods-pcshutdown.main" />
         <module name="qforgemods.qforgemods-actionmenu.main" />
         <module name="qforgemods.qforgemods-updates.main" />
@@ -31,27 +33,19 @@
         <module name="qforgemods.main" />
         <module name="qforgemods.qforgemods-pccrash.main" />
       </profile>
-      <profile name="Gradle Imported" enabled="true">
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.18/481f5bfed3ae29f656eedfe9e98c8365b8ba5c57/lombok-1.18.18.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.graalvm.truffle/truffle-dsl-processor/19.3.5/8cd684c90a516947ca68c14754c00154ae77f3cd/truffle-dsl-processor-19.3.5.jar" />
-        </processorPath>
-        <module name="pccrash.main" />
-      </profile>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="updates" />
-        <module name="core" />
-        <module name="actionmenu" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="com.qtech.forgemods.actionmenu" target="1.8" />
+      <module name="com.qtech.forgemods.core" target="1.8" />
+      <module name="com.qtech.forgemods.core.main" target="1.8" />
+      <module name="com.qtech.forgemods.core.test" target="1.8" />
       <module name="com.qtech.forgemods.debugmenu" target="1.8" />
       <module name="com.qtech.forgemods.debugmenu.main" target="1.8" />
       <module name="com.qtech.forgemods.debugmenu.test" target="1.8" />
+      <module name="com.qtech.forgemods.updates" target="1.8" />
+      <module name="core" target="1.8" />
+      <module name="core.main" target="1.8" />
+      <module name="core.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

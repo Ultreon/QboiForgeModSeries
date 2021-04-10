@@ -4,9 +4,9 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public enum ModuleSecurity {
-    SAFE(new TranslationTextComponent("misc.qforgemod.module.security.safe")),
-    RISC(new TranslationTextComponent("misc.qforgemod.module.security.risc")),
-    EXPERIMENTAL(new TranslationTextComponent("misc.qforgemod.module.security.experimental")),
+    SAFE(new TranslationTextComponent("misc.qfm_core.module.security.safe")),
+    RISC(new TranslationTextComponent("misc.qfm_core.module.security.risc")),
+    EXPERIMENTAL(new TranslationTextComponent("misc.qfm_core.module.security.experimental")),
     ;
 
     private final ITextComponent confirmMessage;

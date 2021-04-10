@@ -1,15 +1,14 @@
 package com.qtech.forgemods.core.init;
 
-import com.qtech.forgemods.core.QFMCore;
-import com.qtech.forgemods.core.modules.tiles.ModBlocks;
-import com.qtech.forgemods.core.modules.tiles.ModMachineTileEntities;
-import com.qtech.forgemods.core.modules.environment.ModEffects;
-import com.qtech.forgemods.core.modules.items.ModItems;
-import com.qtech.forgemods.core.modules.ui.ModMachineContainers;
-import com.qtech.forgemods.core.modules.ui.ModStats;
-import com.qtech.forgemods.core.util.ExceptionUtil;
 import com.qsoftware.modlib.api.providers.IItemProvider;
 import com.qsoftware.modlib.silentlib.registry.ItemDeferredRegister;
+import com.qtech.forgemods.core.QFMCore;
+import com.qtech.forgemods.core.modules.environment.ModEffects;
+import com.qtech.forgemods.core.modules.items.ModItems;
+import com.qtech.forgemods.core.modules.tiles.ModBlocks;
+import com.qtech.forgemods.core.modules.tiles.ModMachineTileEntities;
+import com.qtech.forgemods.core.modules.ui.ModMachineContainers;
+import com.qtech.forgemods.core.util.ExceptionUtil;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EntityType;
@@ -68,7 +67,7 @@ public final class Registration {
         ModBlocks.register();
         ModEffects.register();
 //        ModFluids.register();
-        ModStats.register();
+//        ModStats.register();
         ModMachineContainers.register();
         ModItems.register();
         ModRecipes.register();

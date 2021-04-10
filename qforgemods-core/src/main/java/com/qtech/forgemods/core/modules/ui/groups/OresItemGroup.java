@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class OresItemGroup extends ItemGroup {
-    public static final OresItemGroup instance = new OresItemGroup(ItemGroup.GROUPS.length, "qforgemod_ores");
+    public static final OresItemGroup instance = new OresItemGroup(ItemGroup.GROUPS.length, "qfm_core_ores");
 
     public OresItemGroup(int index, String label) {
         super(index, label);

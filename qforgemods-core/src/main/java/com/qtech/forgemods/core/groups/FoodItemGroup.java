@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class FoodItemGroup extends ItemGroup {
-    public static final FoodItemGroup instance = new FoodItemGroup(ItemGroup.GROUPS.length, "qforgemod_food");
+    public static final FoodItemGroup instance = new FoodItemGroup(ItemGroup.GROUPS.length, "qfm_core_food");
 
     public FoodItemGroup(int index, String label) {
         super(index, label);

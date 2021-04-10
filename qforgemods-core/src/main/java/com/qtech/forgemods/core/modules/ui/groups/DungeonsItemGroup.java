@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class DungeonsItemGroup extends ItemGroup {
-    public static final DungeonsItemGroup instance = new DungeonsItemGroup(ItemGroup.GROUPS.length, "qforgemod_dungeons");
+    public static final DungeonsItemGroup instance = new DungeonsItemGroup(ItemGroup.GROUPS.length, "qfm_core_dungeons");
 
     public DungeonsItemGroup(int index, String label) {
         super(index, label);

@@ -52,7 +52,7 @@ public class QFMActionMenu implements QFMCorePlugin {
     /**
      * QForgeMod's Logger
      */
-    public static final Logger LOGGER = LogManager.getLogger("QFM:Generic");
+    public static final Logger LOGGER = LogManager.getLogger("QFM:ActionMenu");
 
     // Mod Data
     @Getter public static final String modId = "qfm_actionmenu";

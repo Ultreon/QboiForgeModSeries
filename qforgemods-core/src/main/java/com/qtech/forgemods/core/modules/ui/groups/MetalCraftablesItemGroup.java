@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class MetalCraftablesItemGroup extends ItemGroup {
-    public static final MetalCraftablesItemGroup instance = new MetalCraftablesItemGroup(ItemGroup.GROUPS.length, "qforgemod_metal_craftables");
+    public static final MetalCraftablesItemGroup instance = new MetalCraftablesItemGroup(ItemGroup.GROUPS.length, "qfm_core_metal_craftables");
 
     public MetalCraftablesItemGroup(int index, String label) {
         super(index, label);

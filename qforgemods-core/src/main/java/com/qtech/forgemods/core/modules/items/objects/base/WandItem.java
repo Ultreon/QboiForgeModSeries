@@ -43,7 +43,7 @@ public abstract class WandItem extends HudItem {
 
     @Override
     public void inventoryTick(ItemStack stack, @NotNull World worldIn, @NotNull Entity entityIn, int itemSlot, boolean isSelected) {
-        CompoundNBT nbt = stack.getOrCreateChildTag("qforgemod");
+        CompoundNBT nbt = stack.getOrCreateChildTag("qfm_core");
         if (!nbt.contains("mana", 5)) {
             nbt.putFloat("mana", (float) this.maxMana);
         }
@@ -67,7 +67,7 @@ public abstract class WandItem extends HudItem {
      * Called when the player stops using an Item (stops holding the right mouse button).
      */
     public void onPlayerStoppedUsing(ItemStack stack, @NotNull World world, @NotNull LivingEntity entityLiving, int timeLeft) {
-        CompoundNBT nbt = stack.getOrCreateChildTag("qforgemod");
+        CompoundNBT nbt = stack.getOrCreateChildTag("qfm_core");
         if (!nbt.contains("mana", 5)) {
             nbt.putFloat("mana", (float) maxMana);
         } else {
@@ -164,7 +164,7 @@ public abstract class WandItem extends HudItem {
      * @return the amount of mana, or -1 if it's invalid.
      */
     public int getMana(ItemStack stack) {
-        CompoundNBT nbt = stack.getOrCreateChildTag("qforgemod");
+        CompoundNBT nbt = stack.getOrCreateChildTag("qfm_core");
         if (nbt.contains("mana", 3)) {
             return nbt.getInt("mana");
         }
@@ -178,7 +178,7 @@ public abstract class WandItem extends HudItem {
      * @return the amount of mana, or -1 if it's invalid.
      */
     public int getMaxMana(ItemStack stack) {
-        CompoundNBT nbt = stack.getOrCreateChildTag("qforgemod");
+        CompoundNBT nbt = stack.getOrCreateChildTag("qfm_core");
         if (nbt.contains("maxMana", 3)) {
             return nbt.getInt("maxMana");
         }
@@ -192,7 +192,7 @@ public abstract class WandItem extends HudItem {
      * @return the charge time, or -1 if it's invalid.
      */
     public int getChargeTime(ItemStack stack) {
-        CompoundNBT nbt = stack.getOrCreateChildTag("qforgemod");
+        CompoundNBT nbt = stack.getOrCreateChildTag("qfm_core");
         if (nbt.contains("chargeTime", 3)) {
             return nbt.getInt("chargeTime");
         }
@@ -206,7 +206,7 @@ public abstract class WandItem extends HudItem {
      * @return the charge time, or -1 if it's invalid.
      */
     public int getStrength(ItemStack stack) {
-        CompoundNBT nbt = stack.getOrCreateChildTag("qforgemod");
+        CompoundNBT nbt = stack.getOrCreateChildTag("qfm_core");
         if (nbt.contains("strength", 3)) {
             return nbt.getInt("strength");
         }
@@ -215,7 +215,7 @@ public abstract class WandItem extends HudItem {
 
     @Override
     public void addInformation(ItemStack stack, @javax.annotation.Nullable World worldIn, @NotNull List<ITextComponent> tooltip, @NotNull ITooltipFlag flagIn) {
-        CompoundNBT nbt = stack.getOrCreateChildTag("qforgemod");
+        CompoundNBT nbt = stack.getOrCreateChildTag("qfm_core");
         if (worldIn == null) {
             return;
         }
@@ -261,7 +261,7 @@ public abstract class WandItem extends HudItem {
 
         World worldIn = player.getEntityWorld();
 
-        CompoundNBT nbt = stack.getOrCreateChildTag("qforgemod");
+        CompoundNBT nbt = stack.getOrCreateChildTag("qfm_core");
         if (worldIn == null) {
             return;
         }

@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class ToolsItemGroup extends ItemGroup {
-    public static final ToolsItemGroup instance = new ToolsItemGroup(ItemGroup.GROUPS.length, "qforgemod_tools");
+    public static final ToolsItemGroup instance = new ToolsItemGroup(ItemGroup.GROUPS.length, "qfm_core_tools");
 
     public ToolsItemGroup(int index, String label) {
         super(index, label);

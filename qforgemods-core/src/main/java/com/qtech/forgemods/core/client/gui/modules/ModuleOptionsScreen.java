@@ -12,7 +12,7 @@ public abstract class ModuleOptionsScreen<T extends Module> extends AdvancedScre
     protected final T module;
 
     protected ModuleOptionsScreen(Screen back, T module) {
-        super(new TranslationTextComponent("screen.qforgemod.module_options." + module.getName()));
+        super(new TranslationTextComponent("screen.qfm_core.module_options." + module.getName()));
         this.back = back;
         this.module = module;
     }

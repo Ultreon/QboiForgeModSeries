@@ -49,12 +49,12 @@ public class QFMPcCrash implements QFMCorePlugin {
     /**
      * QForgeMod's Logger
      */
-    public static final Logger LOGGER = LogManager.getLogger("QFM:Generic");
+    public static final Logger LOGGER = LogManager.getLogger("QFM:PcCrash");
 
     // Mod Data
     @Getter public static final String modId = "qfm_pccrash";
     @Getter public static final String modName = "Qboi's Forge Mods: PC Crash";
-    @Getter public static final String nbtName = "QFMCore";
+    @Getter public static final String nbtName = "QFMPcCrash";
     @Getter public static final String modVersion;
     @Getter public static final QFMVersion version;
     @Getter private static final QfmArgs modArgs;

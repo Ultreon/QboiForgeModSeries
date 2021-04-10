@@ -2,7 +2,6 @@ package com.qtech.forgemods.materials;
 
 import com.qsoftware.modlib.api.providers.IItemProvider;
 import com.qsoftware.modlib.silentlib.registry.ItemDeferredRegister;
-import com.qtech.forgemods.materials.items.tools.ModTraits;
 import lombok.experimental.UtilityClass;
 import net.minecraft.block.Block;
 import net.minecraft.fluid.Fluid;
@@ -34,14 +33,13 @@ public final class MaterialsRegistration {
 
         MaterialsRegistration.BLOCKS.register(modEventBus);
         MaterialsRegistration.ITEMS.register(modEventBus);
+        MaterialsRegistration.FLUIDS.register(modEventBus);
+        MaterialsRegistration.PARTICLES.register(modEventBus);
         MaterialsRegistration.RECIPE_SERIALIZERS.register(modEventBus);
-        ModTraits.REGISTRY.register(modEventBus);
 
-        MaterialStats.register();
         MaterialsBlocks.register();
         MaterialsFluids.register();
         MaterialsItems.register();
-        ModTraits.register();
     }
 
     @SuppressWarnings("unchecked")

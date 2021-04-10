@@ -4,7 +4,6 @@ import com.qtech.filters.Filters;
 import com.qtech.forgemods.core.common.ModuleManager;
 import com.qtech.forgemods.core.common.interfaces.IHasRenderType;
 import com.qtech.forgemods.core.modules.items.objects.advanced.AdvancedBowItem;
-import com.qtech.forgemods.materials.items.tools.Tools;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.Item;
@@ -105,19 +104,6 @@ class MaterialsInit {
 
         Filters.get().register(MaterialsItemGroups.FLUIDS, new ResourceLocation("qfm_materials", "fluids/liquid"), new ItemStack(MaterialsItems.OIL_BUCKET));
         Filters.get().register(MaterialsItemGroups.FLUIDS, new ResourceLocation("qfm_materials", "fluids/gas"), new ItemStack(MaterialsItems.ETHANE_BUCKET));
-
-        Filters.get().register(MaterialsItemGroups.TOOLS, new ResourceLocation("qfm_materials", "tools/swords"), new ItemStack(Tools.COPPER.getSword()));
-        Filters.get().register(MaterialsItemGroups.TOOLS, new ResourceLocation("qfm_materials", "tools/axes"), new ItemStack(Tools.COPPER.getAxe()));
-        Filters.get().register(MaterialsItemGroups.TOOLS, new ResourceLocation("qfm_materials", "tools/pickaxes"), new ItemStack(Tools.COPPER.getPickaxe()));
-        Filters.get().register(MaterialsItemGroups.TOOLS, new ResourceLocation("qfm_materials", "tools/shovels"), new ItemStack(Tools.COPPER.getShovel()));
-        Filters.get().register(MaterialsItemGroups.TOOLS, new ResourceLocation("qfm_materials", "tools/hoes"), new ItemStack(Tools.COPPER.getHoe()));
-        Filters.get().register(MaterialsItemGroups.TOOLS, new ResourceLocation("qfm_materials", "tools/longswords"), new ItemStack(Tools.COPPER.getLongsword()));
-        Filters.get().register(MaterialsItemGroups.TOOLS, new ResourceLocation("qfm_materials", "tools/broadswords"), new ItemStack(Tools.COPPER.getBroadsword()));
-        Filters.get().register(MaterialsItemGroups.TOOLS, new ResourceLocation("qfm_materials", "tools/katanas"), new ItemStack(Tools.COPPER.getKatana()));
-        Filters.get().register(MaterialsItemGroups.TOOLS, new ResourceLocation("qfm_materials", "tools/battleaxes"), new ItemStack(Tools.COPPER.getBattleaxe()));
-        Filters.get().register(MaterialsItemGroups.TOOLS, new ResourceLocation("qfm_materials", "tools/lumber_axes"), new ItemStack(Tools.COPPER.getLumberAxe()));
-        Filters.get().register(MaterialsItemGroups.TOOLS, new ResourceLocation("qfm_materials", "tools/excavators"), new ItemStack(Tools.COPPER.getExcavator()));
-        Filters.get().register(MaterialsItemGroups.TOOLS, new ResourceLocation("qfm_materials", "tools/hammers"), new ItemStack(Tools.COPPER.getHammer()));
     }
 
     /**

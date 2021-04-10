@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class MachinesItemGroup extends ItemGroup {
-    public static final MachinesItemGroup instance = new MachinesItemGroup(ItemGroup.GROUPS.length, "qforgemod_machines");
+    public static final MachinesItemGroup instance = new MachinesItemGroup(ItemGroup.GROUPS.length, "qfm_core_machines");
 
     public MachinesItemGroup(int index, String label) {
         super(index, label);

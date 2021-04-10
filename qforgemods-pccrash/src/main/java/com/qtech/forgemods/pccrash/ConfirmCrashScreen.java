@@ -30,7 +30,7 @@ public class ConfirmCrashScreen extends Screen {
     private int ticksUntilEnable;
 
     public ConfirmCrashScreen(Screen backScreen, Runnable crash) {
-        super(new TranslationTextComponent("msg.qforgemod.confirm_crash.title"));
+        super(new TranslationTextComponent("msg.qfm_pccrash.confirm_crash.title"));
         this.backScreen = backScreen;
         this.crash = crash;
         this.yesButtonText = DialogTexts.GUI_YES;
@@ -68,7 +68,7 @@ public class ConfirmCrashScreen extends Screen {
         this.renderBackground(matrixStack);
 
         drawCenteredString(matrixStack, this.font, this.title, this.width / 2, 70, 0xffffff);
-        drawCenteredString(matrixStack, this.font, new TranslationTextComponent("msg.qforgemod.confirm_crash.description"), this.width / 2, 90, 0xbfbfbf);
+        drawCenteredString(matrixStack, this.font, new TranslationTextComponent("msg.qfm_pccrash.confirm_crash.description"), this.width / 2, 90, 0xbfbfbf);
 
         this.bidiRenderer.func_241863_a(matrixStack, this.width / 2, 90);
         super.render(matrixStack, mouseX, mouseY, partialTicks);

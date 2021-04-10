@@ -30,7 +30,7 @@ public class ConfirmHibernateScreen extends Screen {
     private int ticksUntilEnable;
 
     public ConfirmHibernateScreen(Screen backScreen, Runnable hibernate) {
-        super(new TranslationTextComponent("msg.qforgemod.confirm_hibernate.title"));
+        super(new TranslationTextComponent("msg.qfm_shutdown.confirm_hibernate.title"));
         this.backScreen = backScreen;
         this.hibernate = hibernate;
         this.yesButtonText = DialogTexts.GUI_YES;
@@ -69,7 +69,7 @@ public class ConfirmHibernateScreen extends Screen {
         this.renderBackground(matrixStack);
 
         drawCenteredString(matrixStack, this.font, this.title, this.width / 2, 70, 0xffffff);
-        drawCenteredString(matrixStack, this.font, new TranslationTextComponent("msg.qforgemod.confirm_hibernate.description"), this.width / 2, 90, 0xbfbfbf);
+        drawCenteredString(matrixStack, this.font, new TranslationTextComponent("msg.qfm_shutdown.confirm_hibernate.description"), this.width / 2, 90, 0xbfbfbf);
 
         this.bidiRenderer.func_241863_a(matrixStack, this.width / 2, 90);
         super.render(matrixStack, mouseX, mouseY, partialTicks);

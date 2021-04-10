@@ -167,9 +167,9 @@ public final class ModuleManager {
     public void init() throws IOException {
         File configFolder;
         if (QFMCore.isClientSide()) {
-            configFolder = new File(Minecraft.getInstance().gameDir, "qforgemod-data/config");
+            configFolder = new File(Minecraft.getInstance().gameDir, "qfm_core-data/config");
         } else if (QFMCore.isServerSide()) {
-            configFolder = new File("qforgemod-data/config").getAbsoluteFile();
+            configFolder = new File("qfm_core-data/config").getAbsoluteFile();
         } else {
             throw new IllegalStateException("Minecraft is not either client or server side.");
         }

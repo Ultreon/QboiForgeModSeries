@@ -80,7 +80,7 @@ public class ModuleScreen extends Screen {
             e.printStackTrace();
 
             if (QFMCore.isClientSide()) {
-               ErrorToast systemToast = new ErrorToast(new TranslationTextComponent("misc.qforgemod.error"), new TranslationTextComponent("misc.qforgemod.failed_save", I18n.format("misc.qforgemod.modules")));
+               ErrorToast systemToast = new ErrorToast(new TranslationTextComponent("misc.qfm_core.error"), new TranslationTextComponent("misc.qfm_core.failed_save", I18n.format("misc.qfm_core.modules")));
                Objects.requireNonNull(minecraft).getToastGui().add(systemToast);
             }
          }
@@ -154,7 +154,7 @@ public class ModuleScreen extends Screen {
 
       // Draw help message if mouse pointer is on the help icon.
       if (AdvancedScreen.isPointInRegion(1, 1, 17, 17, mouseX, mouseY)) {
-         mcg.renderTooltip(new TranslationTextComponent("msg.qforgemod.module_screen.help"), new Point(16, mouseY));
+         mcg.renderTooltip(new TranslationTextComponent("msg.qfm_core.module_screen.help"), new Point(16, mouseY));
       }
    }
 

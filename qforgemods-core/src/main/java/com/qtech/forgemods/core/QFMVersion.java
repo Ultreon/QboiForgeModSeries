@@ -130,15 +130,15 @@ public class QFMVersion implements IVersion {
 
         switch (stage) {
             case ALPHA:
-                sb.append(I18n.format("misc.qforgemod.version.alpha"));
+                sb.append(I18n.format("misc.qfm_core.version.alpha"));
             case BETA:
-                sb.append(I18n.format("misc.qforgemod.version.beta"));
+                sb.append(I18n.format("misc.qfm_core.version.beta"));
             case PRE:
-                sb.append(I18n.format("misc.qforgemod.version.pre"));
+                sb.append(I18n.format("misc.qfm_core.version.pre"));
             case RELEASE:
-                sb.append(I18n.format("misc.qforgemod.version.release"));
+                sb.append(I18n.format("misc.qfm_core.version.release"));
             default:
-                sb.append(I18n.format("misc.qforgemod.unknown"));
+                sb.append(I18n.format("misc.qfm_core.unknown"));
         }
 
         sb.append(' ');

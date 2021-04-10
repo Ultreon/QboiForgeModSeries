@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 
 @Beta
 public class TextEntry extends TextFieldWidget implements MCWidget {
-    private static final ResourceLocation TEXTURE_LEFT = new ResourceLocation("qforgemod", "textures/gui/widgets/text/entry_left");
+    private static final ResourceLocation TEXTURE_LEFT = new ResourceLocation("qfm_core", "textures/gui/widgets/text/entry_left");
 
     public TextEntry(FontRenderer fontRenderer, int x, int y, int width, int height, ITextComponent text) {
         super(fontRenderer, x, y, width, height, text);

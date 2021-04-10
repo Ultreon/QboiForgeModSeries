@@ -11,7 +11,7 @@
       "stage_release": 6
    },
    "build_info": {
-      "date": "2021-04-09T15:15:51.871646800",
+      "date": "2021-04-09T22:56:38.490",
       "compile": {
          "name": "compileJava",
          "source_compat": "1.8",
@@ -21,8 +21,8 @@
          }
       },
       "project": {
-         "name": "updates",
-         "display_name": "root project \u0027updates\u0027",
+         "name": "qforgemods-updates",
+         "display_name": "project \u0027:qforgemods-updates\u0027",
          "minecraft": {
             "mappings_version": "20210309-1.16.5",
             "mappings_channel": "snapshot",

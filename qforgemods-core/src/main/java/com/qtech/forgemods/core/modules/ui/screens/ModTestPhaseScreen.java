@@ -34,7 +34,7 @@ public class ModTestPhaseScreen extends Screen {
     private int ticksUntilEnable;
 
     public ModTestPhaseScreen(Screen backScreen) {
-        super(new TranslationTextComponent("msg.qforgemod.test_phase.title"));
+        super(new TranslationTextComponent("msg.qfm_core.test_phase.title"));
         this.backScreen = backScreen;
         this.yesButtonText = DialogTexts.GUI_YES;
         this.noButtonText = DialogTexts.GUI_NO;
@@ -72,8 +72,8 @@ public class ModTestPhaseScreen extends Screen {
     public void render(@NotNull MatrixStack matrixStack, int mouseX, int mouseY, float partialTicks) {
         this.renderBackground(matrixStack);
         drawCenteredString(matrixStack, this.font, this.title, this.width / 2, 70, 0xffffff);
-        drawCenteredString(matrixStack, this.font, new TranslationTextComponent("msg.qforgemod.test_phase.description"), this.width / 2, 90, 0xbfbfbf);
-        drawCenteredString(matrixStack, this.font, new TranslationTextComponent("msg.qforgemod.test_phase.description.1"), this.width / 2, 100, 0xbfbfbf);
+        drawCenteredString(matrixStack, this.font, new TranslationTextComponent("msg.qfm_core.test_phase.description"), this.width / 2, 90, 0xbfbfbf);
+        drawCenteredString(matrixStack, this.font, new TranslationTextComponent("msg.qfm_core.test_phase.description.1"), this.width / 2, 100, 0xbfbfbf);
         this.field_243276_q.func_241863_a(matrixStack, this.width / 2, 90);
         super.render(matrixStack, mouseX, mouseY, partialTicks);
     }

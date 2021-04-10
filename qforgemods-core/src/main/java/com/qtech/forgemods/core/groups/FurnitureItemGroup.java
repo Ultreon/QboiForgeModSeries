@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class FurnitureItemGroup extends ItemGroup {
-    public static final FurnitureItemGroup instance = new FurnitureItemGroup(ItemGroup.GROUPS.length, "qforgemod_furniture");
+    public static final FurnitureItemGroup instance = new FurnitureItemGroup(ItemGroup.GROUPS.length, "qfm_core_furniture");
 
     public FurnitureItemGroup(int index, String label) {
         super(index, label);

@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class ShapesItemGroup extends ItemGroup {
-    public static final ShapesItemGroup instance = new ShapesItemGroup(ItemGroup.GROUPS.length, "qforgemod_shapes");
+    public static final ShapesItemGroup instance = new ShapesItemGroup(ItemGroup.GROUPS.length, "qfm_core_shapes");
 
     public ShapesItemGroup(int index, String label) {
         super(index, label);

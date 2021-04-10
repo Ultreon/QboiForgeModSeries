@@ -80,7 +80,7 @@ public abstract class Module {
      * @return an text component containing the localized name of the module/
      */
     public final ITextComponent getLocalizedName() {
-        return new TranslationTextComponent("module.qforgemod." + getName().replaceAll("/", "."));
+        return new TranslationTextComponent("module.qfm_core." + getName().replaceAll("/", "."));
     }
 
     /**

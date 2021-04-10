@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class SpecialsItemGroup extends ItemGroup {
-    public static final SpecialsItemGroup instance = new SpecialsItemGroup(ItemGroup.GROUPS.length, "qforgemod_specials");
+    public static final SpecialsItemGroup instance = new SpecialsItemGroup(ItemGroup.GROUPS.length, "qfm_core_specials");
 
     public SpecialsItemGroup(int index, String label) {
         super(index, label);

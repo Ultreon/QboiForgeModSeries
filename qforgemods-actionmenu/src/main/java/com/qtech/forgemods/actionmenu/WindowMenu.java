@@ -22,7 +22,7 @@ public class WindowMenu extends AbstractActionMenu {
 
             @Override
             public ITextComponent getText() {
-                return new TranslationTextComponent("action.qforgemod.window.close");
+                return new TranslationTextComponent("action.qfm_actionmenu.window.close");
             }
         });
         addItem(new IActionMenuItem() {
@@ -34,7 +34,7 @@ public class WindowMenu extends AbstractActionMenu {
 
             @Override
             public ITextComponent getText() {
-                return new TranslationTextComponent("action.qforgemod.window.fullscreen");
+                return new TranslationTextComponent("action.qfm_actionmenu.window.fullscreen");
             }
         });
     }

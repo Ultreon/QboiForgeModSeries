@@ -53,7 +53,7 @@ public class QFMPcShutdown implements QFMCorePlugin {
     /**
      * QForgeMod's Logger
      */
-    public static final Logger LOGGER = LogManager.getLogger("QFM:Generic");
+    public static final Logger LOGGER = LogManager.getLogger("QFM:PcShutdown");
 
     // Mod Data
     @Getter public static final String modId = "qfm_pcshutdown";

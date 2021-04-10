@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class FletchingItemGroup extends ItemGroup {
-    public static final FletchingItemGroup instance = new FletchingItemGroup(ItemGroup.GROUPS.length, "qforgemod_fletching");
+    public static final FletchingItemGroup instance = new FletchingItemGroup(ItemGroup.GROUPS.length, "qfm_core_fletching");
 
     public FletchingItemGroup(int index, String label) {
         super(index, label);

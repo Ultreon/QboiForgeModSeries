@@ -38,12 +38,12 @@ public class ConfirmExitScreen extends Screen {
     private ITextComponent crashPcText;
 
     public ConfirmExitScreen(Screen backScreen) {
-        super(new TranslationTextComponent("msg.qforgemod.confirm_exit.title"));
+        super(new TranslationTextComponent("msg.qfm_core.confirm_exit.title"));
         this.backScreen = backScreen;
         this.yesButtonText = DialogTexts.GUI_YES;
         this.noButtonText = DialogTexts.GUI_NO;
-        this.shutdownPcText = new TranslationTextComponent("button.qforgemod.confirm_exit.shutdown_pc");
-        this.crashPcText = new TranslationTextComponent("button.qforgemod.confirm_exit.crash_pc");
+        this.shutdownPcText = new TranslationTextComponent("button.qfm_core.confirm_exit.shutdown_pc");
+        this.crashPcText = new TranslationTextComponent("button.qfm_core.confirm_exit.crash_pc");
     }
 
     @SuppressWarnings("CommentedOutCode")
@@ -99,7 +99,7 @@ public class ConfirmExitScreen extends Screen {
             this.renderBackground(matrixStack);
         }
         drawCenteredString(matrixStack, this.font, this.title, this.width / 2, 70, 0xffffff);
-        drawCenteredString(matrixStack, this.font, new TranslationTextComponent("msg.qforgemod.confirm_exit.description"), this.width / 2, 90, 0xbfbfbf);
+        drawCenteredString(matrixStack, this.font, new TranslationTextComponent("msg.qfm_core.confirm_exit.description"), this.width / 2, 90, 0xbfbfbf);
         this.bidi.func_241863_a(matrixStack, this.width / 2, 90);
         super.render(matrixStack, mouseX, mouseY, partialTicks);
     }

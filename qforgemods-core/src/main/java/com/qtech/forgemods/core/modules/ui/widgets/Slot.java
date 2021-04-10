@@ -7,7 +7,7 @@ import net.minecraft.util.ResourceLocation;
 
 @Beta
 public class Slot extends net.minecraft.inventory.container.Slot {
-    private static final ResourceLocation TEXTURE = new ResourceLocation("qforgemod", "textures/gui/widgets/slot/slot.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation("qfm_core", "textures/gui/widgets/slot/slot.png");
 
     public Slot(IInventory inventoryIn, int index, int xPosition, int yPosition) {
         super(inventoryIn, index, xPosition, yPosition);

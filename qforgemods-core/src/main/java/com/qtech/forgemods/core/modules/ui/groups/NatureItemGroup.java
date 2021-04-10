@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class NatureItemGroup extends ItemGroup {
-    public static final NatureItemGroup instance = new NatureItemGroup(ItemGroup.GROUPS.length, "qforgemod_nature");
+    public static final NatureItemGroup instance = new NatureItemGroup(ItemGroup.GROUPS.length, "qfm_core_nature");
 
     public NatureItemGroup(int index, String label) {
         super(index, label);

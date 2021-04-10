@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class FluidItemGroup extends ItemGroup {
-    public static final FluidItemGroup instance = new FluidItemGroup(ItemGroup.GROUPS.length, "qforgemod_fluids");
+    public static final FluidItemGroup instance = new FluidItemGroup(ItemGroup.GROUPS.length, "qfm_core_fluids");
 
     public FluidItemGroup(int index, String label) {
         super(index, label);

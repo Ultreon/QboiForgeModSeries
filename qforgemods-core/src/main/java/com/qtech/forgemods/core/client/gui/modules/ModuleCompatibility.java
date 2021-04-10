@@ -10,9 +10,9 @@ import net.minecraft.util.text.TranslationTextComponent;
  * @author Qboi123
  */
 public enum ModuleCompatibility {
-    FULL(true, true, new TranslationTextComponent("misc.qforgemod.module.compat.full")),
-    PARTIAL(false, true, new TranslationTextComponent("misc.qforgemod.module.compat.partial")),
-    NONE(false, false, new TranslationTextComponent("misc.qforgemod.module.compat.none")),
+    FULL(true, true, new TranslationTextComponent("misc.qfm_core.module.compat.full")),
+    PARTIAL(false, true, new TranslationTextComponent("misc.qfm_core.module.compat.partial")),
+    NONE(false, false, new TranslationTextComponent("misc.qfm_core.module.compat.none")),
     ;
 
     private final boolean compatible;

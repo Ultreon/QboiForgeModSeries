@@ -5,8 +5,10 @@ import com.qsoftware.modlib.silentlib.data.ExtendedShapelessRecipeBuilder;
 import com.qtech.forgemods.core.data.recipes.AlloySmeltingRecipeBuilder;
 import com.qtech.forgemods.core.data.recipes.CompressingRecipeBuilder;
 import com.qtech.forgemods.core.data.recipes.CrushingRecipeBuilder;
-import com.qtech.forgemods.materials.*;
-import com.qtech.forgemods.materials.items.tools.Tools;
+import com.qtech.forgemods.materials.MaterialsBlocks;
+import com.qtech.forgemods.materials.ModTags;
+import com.qtech.forgemods.materials.OreMaterial;
+import com.qtech.forgemods.materials.QFMMaterials;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.CookingRecipeBuilder;
 import net.minecraft.data.DataGenerator;
@@ -17,7 +19,6 @@ import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ITag;
 import net.minecraft.util.IItemProvider;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.Tags;
 
 import javax.annotation.Nullable;
@@ -308,203 +309,14 @@ public class MaterialsRecipesProvider extends RecipeProvider {
 //                .key('#', ModTags.Items.PLASTIC)
 //                .key('B', MaterialsItems.BATTERY)
 //                .build(consumer);
-
-        for (Tools tools : Tools.values()) {
-            QFMMaterials.LOGGER.info("Loading recipe for tool: " + tools.getName());
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getSword())
-                    .patternLine("X")
-                    .patternLine("X")
-                    .patternLine("/")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer);
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getAxe())
-                    .patternLine("XX")
-                    .patternLine("X/")
-                    .patternLine(" /")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer);
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getAxe())
-                    .patternLine("XX")
-                    .patternLine("/X")
-                    .patternLine("/ ")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer, new ResourceLocation(QFMMaterials.modId, tools.getAxe().getName() + "_mirror"));
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getShovel())
-                    .patternLine("X")
-                    .patternLine("/")
-                    .patternLine("/")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer);
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getPickaxe())
-                    .patternLine("XXX")
-                    .patternLine(" / ")
-                    .patternLine(" / ")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer);
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getHoe())
-                    .patternLine("XX")
-                    .patternLine(" /")
-                    .patternLine(" /")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer);
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getHoe())
-                    .patternLine("XX")
-                    .patternLine("/ ")
-                    .patternLine("/ ")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer, new ResourceLocation(QFMMaterials.modId, tools.getHoe().getName() + "_mirror"));
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getKatana())
-                    .patternLine(" X")
-                    .patternLine("X ")
-                    .patternLine("X/")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer);
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getKatana())
-                    .patternLine("X ")
-                    .patternLine(" X")
-                    .patternLine("/X")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer, new ResourceLocation(QFMMaterials.modId, tools.getKatana().getName() + "_mirror"));
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getLongsword())
-                    .patternLine("X ")
-                    .patternLine("X ")
-                    .patternLine("X/")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer);
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getLongsword())
-                    .patternLine(" X")
-                    .patternLine(" X")
-                    .patternLine("/X")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer, new ResourceLocation(QFMMaterials.modId, tools.getLongsword().getName() + "_mirror"));
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getBroadsword())
-                    .patternLine("XX")
-                    .patternLine("XX")
-                    .patternLine("/ ")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer);
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getBroadsword())
-                    .patternLine("XX")
-                    .patternLine("XX")
-                    .patternLine(" /")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer, new ResourceLocation(QFMMaterials.modId, tools.getBroadsword().getName() + "_mirror"));
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getHammer())
-                    .patternLine("XXX")
-                    .patternLine("XXX")
-                    .patternLine(" / ")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer);
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getExcavator())
-                    .patternLine("XX ")
-                    .patternLine("X/ ")
-                    .patternLine("  /")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer);
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getExcavator())
-                    .patternLine(" XX")
-                    .patternLine(" /X")
-                    .patternLine("/  ")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer, new ResourceLocation(QFMMaterials.modId, tools.getExcavator().getName() + "_mirror"));
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getBattleaxe())
-                    .patternLine("XXX")
-                    .patternLine("X/X")
-                    .patternLine(" / ")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer);
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getLumberAxe())
-                    .patternLine("XXX")
-                    .patternLine("X/ ")
-                    .patternLine(" / ")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer);
-            ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getLumberAxe())
-                    .patternLine("XXX")
-                    .patternLine(" /X")
-                    .patternLine(" / ")
-                    .key('/', () -> tools.getHandleMaterial().get())
-                    .key('X', () -> tools.getBaseMaterial().get())
-                    .build(consumer, new ResourceLocation(QFMMaterials.modId, tools.getLumberAxe().getName() + "_mirror"));
-            if (tools.getArmorSubMaterial() != null) {
-                ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getHelmet())
-                        .patternLine("XXX")
-                        .patternLine("XOX")
-                        .key('O', () -> tools.getArmorSubMaterial().get())
-                        .key('X', () -> tools.getBaseMaterial().get())
-                        .build(consumer);
-                ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getChestplate())
-                        .patternLine("XOX")
-                        .patternLine("XXX")
-                        .patternLine("XXX")
-                        .key('O', () -> tools.getArmorSubMaterial().get())
-                        .key('X', () -> tools.getBaseMaterial().get())
-                        .build(consumer);
-                ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getLeggings())
-                        .patternLine("XXX")
-                        .patternLine("XOX")
-                        .patternLine("X X")
-                        .key('O', () -> tools.getArmorSubMaterial().get())
-                        .key('X', () -> tools.getBaseMaterial().get())
-                        .build(consumer);
-                ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getBoots())
-                        .patternLine("X X")
-                        .patternLine("XOX")
-                        .key('O', () -> tools.getArmorSubMaterial().get())
-                        .key('X', () -> tools.getBaseMaterial().get())
-                        .build(consumer);
-            } else {
-                ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getHelmet())
-                        .patternLine("XXX")
-                        .patternLine("X X")
-                        .key('X', () -> tools.getBaseMaterial().get())
-                        .build(consumer);
-                ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getChestplate())
-                        .patternLine("X X")
-                        .patternLine("XXX")
-                        .patternLine("XXX")
-                        .key('X', () -> tools.getBaseMaterial().get())
-                        .build(consumer);
-                ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getLeggings())
-                        .patternLine("XXX")
-                        .patternLine("X X")
-                        .patternLine("X X")
-                        .key('X', () -> tools.getBaseMaterial().get())
-                        .build(consumer);
-                ExtendedShapedRecipeBuilder.vanillaBuilder(tools.getBoots())
-                        .patternLine("X X")
-                        .patternLine("X X")
-                        .key('X', () -> tools.getBaseMaterial().get())
-                        .build(consumer);
-            }
-        }
-
-        // Todo: Move this crafting recipe provider for empty canister to 'com.qtech.forgemods:machines'
+//
 //        ExtendedShapedRecipeBuilder.vanillaBuilder(MaterialsItems.EMPTY_CANISTER, 8)
 //                .patternLine(" # ")
 //                .patternLine("# #")
 //                .patternLine(" # ")
 //                .key('#', OreMaterial.ALUMINUM.getIngotTag().get())
 //                .build(consumer);
-
+//
 //        ExtendedShapelessRecipeBuilder.vanillaBuilder(MaterialsItems.EMPTY_CANISTER)
 //                .addIngredient(MaterialsItems.CANISTER)
 //                .build(consumer, QFMMaterials.rl("canister_clear"));

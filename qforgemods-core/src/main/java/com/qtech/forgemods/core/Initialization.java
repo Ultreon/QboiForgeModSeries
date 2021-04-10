@@ -135,35 +135,35 @@ public class Initialization {
 //        Filters.get().register(ModItemGroups.METAL_CRAFTABLES, new ResourceLocation("qforgemod", "metal_craftables/ingots"), new ItemStack(Items.IRON_INGOT));
 //        Filters.get().register(ModItemGroups.METAL_CRAFTABLES, new ResourceLocation("qforgemod", "metal_craftables/chunks"), new ItemStack(OreMaterial.IRON.getChunks().orElse(Items.AIR)));
 
-        Filters.get().register(ModItemGroups.NATURE, new ResourceLocation("qforgemod", "nature/flowers"), new ItemStack(Items.POPPY));
-        Filters.get().register(ModItemGroups.NATURE, new ResourceLocation("qforgemod", "nature/saplings"), new ItemStack(Items.OAK_SAPLING));
-        Filters.get().register(ModItemGroups.NATURE, new ResourceLocation("qforgemod", "nature/leaves"), new ItemStack(Items.OAK_LEAVES));
+        Filters.get().register(ModItemGroups.NATURE, new ResourceLocation("qfm_core", "nature/flowers"), new ItemStack(Items.POPPY));
+        Filters.get().register(ModItemGroups.NATURE, new ResourceLocation("qfm_core", "nature/saplings"), new ItemStack(Items.OAK_SAPLING));
+        Filters.get().register(ModItemGroups.NATURE, new ResourceLocation("qfm_core", "nature/leaves"), new ItemStack(Items.OAK_LEAVES));
 
 //        Filters.get().register(ModItemGroups.FLUIDS, new ResourceLocation("qforgemod", "fluids/liquid"), new ItemStack(ModItems.OIL_BUCKET));
 //        Filters.get().register(ModItemGroups.FLUIDS, new ResourceLocation("qforgemod", "fluids/gas"), new ItemStack(ModItems.ETHANE_BUCKET));
 
-        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qforgemod", "dungeons/knifes"), new ItemStack(ModItems.DUNGEONS_ETERNAL_KNIFE));
-        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qforgemod", "dungeons/swords"), new ItemStack(ModItems.DUNGEONS_DIAMOND_SWORD));
-        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qforgemod", "dungeons/axes"), new ItemStack(ModItems.DUNGEONS_DIAMOND_AXE));
-        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qforgemod", "dungeons/pickaxes"), new ItemStack(ModItems.DUNGEONS_DIAMOND_PICKAXE));
-        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qforgemod", "dungeons/hammers"), new ItemStack(ModItems.DUNGEONS_GREAT_HAMMER));
-        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qforgemod", "dungeons/scythes"), new ItemStack(ModItems.DUNGEONS_FROST_SCYTHE));
-        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qforgemod", "dungeons/flails"), new ItemStack(ModItems.DUNGEONS_FLAIL));
-        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qforgemod", "dungeons/bows"), new ItemStack(ModItems.DUNGEONS_HUNTERS_BOW));
+        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qfm_core", "dungeons/knifes"), new ItemStack(ModItems.DUNGEONS_ETERNAL_KNIFE));
+        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qfm_core", "dungeons/swords"), new ItemStack(ModItems.DUNGEONS_DIAMOND_SWORD));
+        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qfm_core", "dungeons/axes"), new ItemStack(ModItems.DUNGEONS_DIAMOND_AXE));
+        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qfm_core", "dungeons/pickaxes"), new ItemStack(ModItems.DUNGEONS_DIAMOND_PICKAXE));
+        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qfm_core", "dungeons/hammers"), new ItemStack(ModItems.DUNGEONS_GREAT_HAMMER));
+        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qfm_core", "dungeons/scythes"), new ItemStack(ModItems.DUNGEONS_FROST_SCYTHE));
+        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qfm_core", "dungeons/flails"), new ItemStack(ModItems.DUNGEONS_FLAIL));
+        Filters.get().register(ModItemGroups.DUNGEONS, new ResourceLocation("qfm_core", "dungeons/bows"), new ItemStack(ModItems.DUNGEONS_HUNTERS_BOW));
 
-        Filters.get().register(ModItemGroups.MACHINES, new ResourceLocation("qforgemod", "machines1/basic"), new ItemStack(Blocks.STONE));
-        Filters.get().register(ModItemGroups.MACHINES, new ResourceLocation("qforgemod", "machines1/advanced"), new ItemStack(Blocks.IRON_BLOCK));
-        Filters.get().register(ModItemGroups.MACHINES, new ResourceLocation("qforgemod", "machines1/drying_racks"), new ItemStack(ModBlocks.OAK_DRYING_RACK));
-        Filters.get().register(ModItemGroups.MACHINES, new ResourceLocation("qforgemod", "machines1/storage"), new ItemStack(ModItems.BATTERY));
-        Filters.get().register(ModItemGroups.MACHINES, new ResourceLocation("qforgemod", "machines1/generators"), new ItemStack(ModBlocks.COAL_GENERATOR));
+        Filters.get().register(ModItemGroups.MACHINES, new ResourceLocation("qfm_core", "machines1/basic"), new ItemStack(Blocks.STONE));
+        Filters.get().register(ModItemGroups.MACHINES, new ResourceLocation("qfm_core", "machines1/advanced"), new ItemStack(Blocks.IRON_BLOCK));
+        Filters.get().register(ModItemGroups.MACHINES, new ResourceLocation("qfm_core", "machines1/drying_racks"), new ItemStack(ModBlocks.OAK_DRYING_RACK));
+        Filters.get().register(ModItemGroups.MACHINES, new ResourceLocation("qfm_core", "machines1/storage"), new ItemStack(ModItems.BATTERY));
+        Filters.get().register(ModItemGroups.MACHINES, new ResourceLocation("qfm_core", "machines1/generators"), new ItemStack(ModBlocks.COAL_GENERATOR));
 
 //        Filters.get().register(ModItemGroups.OVERPOWERED, new ResourceLocation("qforgemod", "overpowered/infinity"), new ItemStack(Tools.INFINITY.getAxe()));
-        Filters.get().register(ModItemGroups.OVERPOWERED, new ResourceLocation("qforgemod", "overpowered/tools"), new ItemStack(ModItems.BAN_HAMMER));
-        Filters.get().register(ModItemGroups.OVERPOWERED, new ResourceLocation("qforgemod", "overpowered/wands"), new ItemStack(ModItems.WALKING_STAFF));
+        Filters.get().register(ModItemGroups.OVERPOWERED, new ResourceLocation("qfm_core", "overpowered/tools"), new ItemStack(ModItems.BAN_HAMMER));
+        Filters.get().register(ModItemGroups.OVERPOWERED, new ResourceLocation("qfm_core", "overpowered/wands"), new ItemStack(ModItems.WALKING_STAFF));
 
-        Filters.get().register(ModItemGroups.REDSTONE, new ResourceLocation("qforgemod", "redstone/doors"), new ItemStack(ModBlocks.SHOPPING_DOOR));
-        Filters.get().register(ModItemGroups.REDSTONE, new ResourceLocation("qforgemod", "redstone/buttons"), new ItemStack(ModBlocks.EUCALYPTUS_BUTTON));
-        Filters.get().register(ModItemGroups.REDSTONE, new ResourceLocation("qforgemod", "redstone/pressure_plates"), new ItemStack(ModBlocks.EUCALYPTUS_PRESSURE_PLATE));
+        Filters.get().register(ModItemGroups.REDSTONE, new ResourceLocation("qfm_core", "redstone/doors"), new ItemStack(ModBlocks.SHOPPING_DOOR));
+        Filters.get().register(ModItemGroups.REDSTONE, new ResourceLocation("qfm_core", "redstone/buttons"), new ItemStack(ModBlocks.EUCALYPTUS_BUTTON));
+        Filters.get().register(ModItemGroups.REDSTONE, new ResourceLocation("qfm_core", "redstone/pressure_plates"), new ItemStack(ModBlocks.EUCALYPTUS_PRESSURE_PLATE));
 
 //        Filters.get().register(ModItemGroups.TOOLS, new ResourceLocation("qforgemod", "tools/swords"), new ItemStack(Tools.COPPER.getSword()));
 //        Filters.get().register(ModItemGroups.TOOLS, new ResourceLocation("qforgemod", "tools/axes"), new ItemStack(Tools.COPPER.getAxe()));

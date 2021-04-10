@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author Qboi123
  */
 public class SpawnEggsItemGroup extends ItemGroup {
-    public static final SpawnEggsItemGroup instance = new SpawnEggsItemGroup(ItemGroup.GROUPS.length, "qforgemod_spawn_eggs");
+    public static final SpawnEggsItemGroup instance = new SpawnEggsItemGroup(ItemGroup.GROUPS.length, "qfm_core_spawn_eggs");
 
     public SpawnEggsItemGroup(int index, String label) {
         super(index, label);
