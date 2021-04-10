@@ -103,28 +103,6 @@ println("Bulding a Java " + compileJava.targetCompatibility + " project...")
 //    add sourceSets.main, "qforgemod.refmap.json"
 //}
 
-publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/Qboi123/QForgeMod")
-            credentials {
-                username = System.getenv("GITHUB_USERNAME")
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
-        maven {
-            name = "QTGithubMaven"
-            url = uri("D:/Maven")
-        }
-    }
-    publications {
-        gpr(MavenPublication) {
-            from(components.java)
-        }
-    }
-}
-
 minecraft {
     // The mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   Snapshot are built nightly.
