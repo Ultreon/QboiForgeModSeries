@@ -9,6 +9,4 @@ import java.util.function.Function;
 @UtilityClass
 public class ModDamageSources {
     public static final DamageSource RADIATION = new DamageSource("qfm_radiation");
-
-    public static final Function<Entity, DamageSource> INFINITY = DamageSourceInfinitySword::new;
 }

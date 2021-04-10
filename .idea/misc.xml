@@ -9,14 +9,5 @@
     </list>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="MavenProjectsManager">
-    <option name="originalFiles">
-      <list>
-        <option value="$PROJECT_DIR$/qforgemods-core/build/poms/pom-default.xml" />
-        <option value="$PROJECT_DIR$/qforgemods-updates/build/poms/pom-default.xml" />
-        <option value="$PROJECT_DIR$/qforgemods-actionmenu/build/poms/pom-default.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

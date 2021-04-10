@@ -86,7 +86,7 @@ output.close()
 
 version = vers + "." + release + '.' + buildNumber
 group = 'com.qtech.forgemods'
-archivesBaseName = 'qforgemods'
+archivesBaseName = 'tools'
 
 jar.version = version
 jar.archiveVersion.set(version)
@@ -150,8 +150,29 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                "qforgemods-core" {
-                    source sourceSets.main
+                QFMCore {
+                    source project(':qforgemods-core').sourceSets.main
+                }
+                QFMActionMenu {
+                    source project(':qforgemods-actionmenu').sourceSets.main
+                }
+                QFMDebugMenu {
+                    source project(':qforgemods-debugmenu').sourceSets.main
+                }
+                QFMMaterials {
+                    source project(':qforgemods-materials').sourceSets.main
+                }
+                QFMTools {
+                    source project(':qforgemods-tools').sourceSets.main
+                }
+                QFMPcCrash {
+                    source project(':qforgemods-pccrash').sourceSets.main
+                }
+                QFMPcShutdown {
+                    source project(':qforgemods-pcshutdown').sourceSets.main
+                }
+                QFMUpdates {
+                    source project(':qforgemods-updates').sourceSets.main
                 }
             }
         }
@@ -166,8 +187,29 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                "qforgemods-core" {
-                    source sourceSets.main
+                QFMCore {
+                    source project(':qforgemods-core').sourceSets.main
+                }
+                QFMActionMenu {
+                    source project(':qforgemods-actionmenu').sourceSets.main
+                }
+                QFMDebugMenu {
+                    source project(':qforgemods-debugmenu').sourceSets.main
+                }
+                QFMMaterials {
+                    source project(':qforgemods-materials').sourceSets.main
+                }
+                QFMTools {
+                    source project(':qforgemods-tools').sourceSets.main
+                }
+                QFMPcCrash {
+                    source project(':qforgemods-pccrash').sourceSets.main
+                }
+                QFMPcShutdown {
+                    source project(':qforgemods-pcshutdown').sourceSets.main
+                }
+                QFMUpdates {
+                    source project(':qforgemods-updates').sourceSets.main
                 }
             }
         }
@@ -182,16 +224,36 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the forgemod for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'qforgemods-core',
-                    '--all',
+            args '--all',
                     '--output', file('src/generated/resources/'),
-                    '--existing', file('src/main/resources/'),
+                    '--existing', sourceSets.main.resources.srcDirs[0],
                     '--existing-mod', 'computercraft',
                     '--existing-mod', 'jei'
 
             mods {
-                "qforgemods-core" {
-                    source sourceSets.main
+                QFMCore {
+                    source project(':qforgemods-core').sourceSets.main
+                }
+                QFMActionMenu {
+                    source project(':qforgemods-actionmenu').sourceSets.main
+                }
+                QFMDebugMenu {
+                    source project(':qforgemods-debugmenu').sourceSets.main
+                }
+                QFMMaterials {
+                    source project(':qforgemods-materials').sourceSets.main
+                }
+                QFMTools {
+                    source project(':qforgemods-tools').sourceSets.main
+                }
+                QFMPcCrash {
+                    source project(':qforgemods-pccrash').sourceSets.main
+                }
+                QFMPcShutdown {
+                    source project(':qforgemods-pcshutdown').sourceSets.main
+                }
+                QFMUpdates {
+                    source project(':qforgemods-updates').sourceSets.main
                 }
             }
         }
@@ -260,9 +322,12 @@ dependencies {
     compileOnly fg.deobf(group: "com.qsoftware", name: "qmodlib", version: "1.0.+")
     runtimeOnly fg.deobf(group: "com.qsoftware", name: "qmodlib", version: "1.0.+")
 
-    // QModLib - Qboi's Library Mod.
-    implementation group: "com.qtech.commons", name: "commons", version: "1.0.+"
-    extraLibs group: "com.qtech.commons", name: "commons", version: "1.0.+"
+    // QFM Core
+    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1431")
+    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1431")
+
+    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "materials", version: "2.0.1414")
+    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "materials", version: "2.0.1414")
 
     compileOnly 'org.projectlombok:lombok:1.18.18'
     annotationProcessor 'org.projectlombok:lombok:1.18.18'
@@ -277,6 +342,15 @@ dependencies {
     minecraft(group: "net.minecraftforge", name: "forge", version: "${mc_version}-${forge_version}"){
         force = true
     }
+
+    compile project(':qforgemods-core')
+    compile project(':qforgemods-actionmenu')
+    compile project(':qforgemods-debugmenu')
+    compile project(':qforgemods-materials')
+    compile project(':qforgemods-tools')
+    compile project(':qforgemods-pccrash')
+    compile project(':qforgemods-pcshutdown')
+    compile project(':qforgemods-updates')
 
     // https://mvnrepository.com/artifact/io.kaitai/kaitai-struct-runtime
     extraLibs group: 'io.kaitai', name: 'kaitai-struct-runtime', version: '0.9'
@@ -314,50 +388,6 @@ dependencies {
     implementation group: 'xml-resolver', name: 'xml-resolver', version: '1.2'
     implementation group: 'org.yaml', name: 'snakeyaml', version: '1.26'
 
-//    extraLibs 'org.antlr:antlr4-runtime:4.7'
-//    implementation 'org.antlr:antlr4-runtime:4.7'
-//
-//    extraLibs group: 'org.graalvm.js', name: 'js', version: '19.3.5'
-//    extraLibs group: 'org.graalvm.js', name: 'js-scriptengine', version: '19.3.5'
-//    extraLibs group: 'org.graalvm.js', name: 'js-launcher', version: '19.3.5'
-//    implementation group: 'org.graalvm.js', name: 'js', version: '19.3.5'
-//    implementation group: 'org.graalvm.js', name: 'js-scriptengine', version: '19.3.5'
-//    implementation group: 'org.graalvm.js', name: 'js-launcher', version: '19.3.5'
-//
-//    extraLibs "org.graalvm.truffle:truffle-dsl-processor:19.3.5"
-//    extraLibs "org.graalvm.truffle:truffle-tck:19.3.5"
-//
-//    extraLibs "org.graalvm.truffle:truffle-api:19.3.5"
-//    extraLibs "org.graalvm.truffle:truffle-nfi:19.3.5"
-//    extraLibs "org.graalvm.truffle:truffle-nfi-native-linux-amd64:19.3.5"
-//    extraLibs "org.graalvm.truffle:truffle-nfi-native-darwin-amd64:19.3.5"
-//    extraLibs "org.graalvm.truffle:truffle-sl-launcher:19.3.5"
-//    extraLibs "org.graalvm.truffle:truffle-sl:19.3.5"
-//    extraLibs "org.graalvm.truffle:truffle-tck-instrumentation:19.3.5"
-//    extraLibs "org.graalvm.truffle:truffle-tck-common:19.3.5"
-//    extraLibs "org.graalvm.truffle:truffle-tck:19.3.5"
-//    implementation "org.graalvm.truffle:truffle-api:19.3.5"
-//    implementation "org.graalvm.truffle:truffle-nfi:19.3.5"
-//    implementation "org.graalvm.truffle:truffle-nfi-native-linux-amd64:19.3.5"
-//    implementation "org.graalvm.truffle:truffle-nfi-native-darwin-amd64:19.3.5"
-//    implementation "org.graalvm.truffle:truffle-sl-launcher:19.3.5"
-//    implementation "org.graalvm.truffle:truffle-sl:19.3.5"
-//    implementation "org.graalvm.truffle:truffle-tck-instrumentation:19.3.5"
-//    implementation "org.graalvm.truffle:truffle-tck-common:19.3.5"
-//    implementation "org.graalvm.truffle:truffle-tck:19.3.5"
-//
-//    extraLibs "org.graalvm.compiler:compiler:19.3.5"
-//    implementation "org.graalvm.compiler:compiler:19.3.5"
-//
-//    extraLibs "org.graalvm.regex:regex:19.3.5"
-//    implementation "org.graalvm.regex:regex:19.3.5"
-//
-//    extraLibs group: 'org.graalvm.sdk', name: 'graal-sdk', version: '19.3.5'
-//    extraLibs group: 'org.graalvm.sdk', name: 'polyglot-tck', version: '19.3.5'
-//    implementation group: 'org.graalvm.sdk', name: 'graal-sdk', version: '19.3.5'
-//    implementation group: 'org.graalvm.sdk', name: 'polyglot-tck', version: '19.3.5'
-//
-//    compileOnly "org.graalvm.truffle:truffle-tck:19.3.5"
 
     // Bson library.
     extraLibs group: 'org.mongodb', name: 'bson', version: '4.1.1'
@@ -454,7 +484,7 @@ jar {
     manifest {
         attributes([
                 "Main-Class": "com.qtech.forgemods.core.Main",
-                "Specification-Title": "qforgemod-core",
+                "Specification-Title": "qforgemods-core",
                 "Specification-Vendor": "qtech-community",
                 "Specification-Version": version,
                 "Implementation-Title": project.name,

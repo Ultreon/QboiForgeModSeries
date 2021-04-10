@@ -1,21 +1,23 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="qforgemods-pcshutdown runServer" type="Application" factoryName="Application" singleton="false">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component>
+  <configuration default="false" factoryName="Application" name="qforgemods-pcshutdown runServer" singleton="false" type="Application">
+    <option name="MAIN_CLASS_NAME" value="net.minecraftforge.userdev.LaunchTesting"/>
+    <option name="VM_PARAMETERS" value="-Dforge.logging.console.level=debug -Dforge.logging.markers=SCAN,REGISTRIES,REGISTRYDUMP"/>
+    <option name="PROGRAM_PARAMETERS" value=""/>
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$\qforgemods-pcshutdown\run"/>
+    <module name="qforgemods-pcshutdown.main"/>
     <envs>
-      <env name="MOD_CLASSES" value="qforgemods-core%%$PROJECT_DIR$/../!QboiForgeModSeries\qforgemods-pcshutdown\build\resources\main;qforgemods-core%%$PROJECT_DIR$/../!QboiForgeModSeries\qforgemods-pcshutdown\build\classes\java\main" />
-      <env name="MCP_MAPPINGS" value="snapshot_20210309-1.16.5" />
-      <env name="MCP_VERSION" value="20201102.104115" />
-      <env name="FORGE_VERSION" value="35.1.16" />
-      <env name="FORGE_GROUP" value="net.minecraftforge" />
-      <env name="target" value="fmluserdevserver" />
-      <env name="MC_VERSION" value="1.16.4" />
+      <env name="MOD_CLASSES" value="qforgemods-core%%$PROJECT_DIR$\qforgemods-pcshutdown\build\resources\main;qforgemods-core%%$PROJECT_DIR$\qforgemods-pcshutdown\build\classes\java\main"/>
+      <env name="MCP_MAPPINGS" value="snapshot_20210309-1.16.5"/>
+      <env name="MCP_VERSION" value="20201102.104115"/>
+      <env name="FORGE_VERSION" value="35.1.16"/>
+      <env name="FORGE_GROUP" value="net.minecraftforge"/>
+      <env name="target" value="fmluserdevserver"/>
+      <env name="MC_VERSION" value="1.16.4"/>
     </envs>
-    <option name="MAIN_CLASS_NAME" value="net.minecraftforge.userdev.LaunchTesting" />
-    <module name="pcshutdown.main" />
-    <option name="VM_PARAMETERS" value="-Dforge.logging.console.level=debug -Dforge.logging.markers=SCAN,REGISTRIES,REGISTRYDUMP" />
-    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qforgemods-pcshutdown/run" />
     <method v="2">
-      <option name="Make" enabled="true" />
-      <option name="Gradle.BeforeRunTask" enabled="true" tasks=":qforgemods-pcshutdown:prepareRunServer" externalProjectPath="$PROJECT_DIR$" />
+      <option enabled="true" name="Make"/>
+      <option enabled="true" externalProjectPath="$PROJECT_DIR$" name="Gradle.BeforeRunTask" tasks=":qforgemods-pcshutdown:prepareRunServer"/>
     </method>
   </configuration>
 </component>

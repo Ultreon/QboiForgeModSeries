@@ -260,8 +260,8 @@ dependencies {
     runtimeOnly fg.deobf(group: "com.qsoftware", name: "qmodlib", version: "1.0.+")
 
     // QFM Core
-    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1430")
-    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1430")
+    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1431")
+    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1431")
 
     // QFM Action Menu
     compileOnly fg.deobf(group: "com.qtech.forgemods", name: "actionmenu", version: "2.0.1421")

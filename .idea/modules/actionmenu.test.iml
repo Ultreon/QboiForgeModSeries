@@ -12,9 +12,6 @@
     </facet>
   </component>
   <component name="McpModuleSettings">
-    <option name="mappingFile" value="D:\Github\!QboiForgeModSeries\qforgemods-actionmenu\build\createMcpToSrg\output.tsrg" />
-    <option name="mcpVersion" value="snapshot_20210309-1.16.5" />
-    <option name="minecraftVersion" value="1.16.4" />
-    <option name="srgType" value="TSRG" />
+    <option name="srgType" value="SRG" />
   </component>
 </module>

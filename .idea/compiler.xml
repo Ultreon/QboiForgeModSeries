@@ -34,7 +34,10 @@
         <module name="qforgemods.qforgemods-pccrash.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
+      <module name="actionmenu" target="1.5" />
+      <module name="actionmenu.main" target="1.8" />
+      <module name="actionmenu.test" target="1.8" />
       <module name="com.qtech.forgemods.actionmenu" target="1.8" />
       <module name="com.qtech.forgemods.core" target="1.8" />
       <module name="com.qtech.forgemods.core.main" target="1.8" />
@@ -43,10 +46,33 @@
       <module name="com.qtech.forgemods.debugmenu.main" target="1.8" />
       <module name="com.qtech.forgemods.debugmenu.test" target="1.8" />
       <module name="com.qtech.forgemods.updates" target="1.8" />
-      <module name="core" target="1.8" />
+      <module name="core" target="1.5" />
       <module name="core.main" target="1.8" />
       <module name="core.test" target="1.8" />
       <module name="debugmenu" target="1.8" />
+      <module name="debugmenu.main" target="1.8" />
+      <module name="debugmenu.test" target="1.8" />
+      <module name="materials" target="1.8" />
+      <module name="materials.main" target="1.8" />
+      <module name="materials.test" target="1.8" />
+      <module name="pccrash" target="1.8" />
+      <module name="pccrash.main" target="1.8" />
+      <module name="pccrash.test" target="1.8" />
+      <module name="pcshutdown" target="1.8" />
+      <module name="pcshutdown.main" target="1.8" />
+      <module name="pcshutdown.test" target="1.8" />
+      <module name="qforgemods.workspace" target="1.8" />
+      <module name="qforgemods.workspace.main" target="1.8" />
+      <module name="qforgemods.workspace.test" target="1.8" />
+      <module name="tools" target="1.8" />
+      <module name="tools.main" target="1.8" />
+      <module name="tools.test" target="1.8" />
+      <module name="updates" target="1.5" />
+      <module name="updates.main" target="1.8" />
+      <module name="updates.test" target="1.8" />
+      <module name="workspace" target="1.8" />
+      <module name="workspace.main" target="1.8" />
+      <module name="workspace.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[36,)"
+loaderVersion = "[35,)"
 license = """
     GNU GENERAL PUBLIC LICENSE
     Version 3, 29 June 2007
@@ -32,7 +32,7 @@ side = "BOTH"
 [[dependencies.qfm_materials]]
 modId = "forge"
 mandatory = true
-versionRange = "[36,)"
+versionRange = "[35,)"
 ordering = "NONE"
 side = "BOTH"
 
