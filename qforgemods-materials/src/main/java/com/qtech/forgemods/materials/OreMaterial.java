@@ -95,20 +95,27 @@ public enum OreMaterial implements IOreMaterial {
     private final ITag.INamedTag<Item> dustTag;
     private final ITag.INamedTag<Item> ingotTag;
     private final ITag.INamedTag<Item> nuggetTag;
+
     @SuppressWarnings("NonFinalFieldInEnum")
     private BlockRegistryObject<Block> ore;
+
     @SuppressWarnings("NonFinalFieldInEnum")
     private BlockRegistryObject<Block> storageBlock;
+
     @SuppressWarnings("NonFinalFieldInEnum")
     private ItemRegistryObject<Item> chunks;
+
     @SuppressWarnings("NonFinalFieldInEnum")
     private ItemRegistryObject<Item> dust;
+
     @SuppressWarnings("NonFinalFieldInEnum")
     private ItemRegistryObject<Item> ingot;
+
     @SuppressWarnings("NonFinalFieldInEnum")
     private ItemRegistryObject<Item> gem;
+
     @SuppressWarnings("NonFinalFieldInEnum")
-    private ItemRegistryObject<Item> nugget;;
+    private ItemRegistryObject<Item> nugget;
 
     OreMaterial(Builder builder) {
         this(builder, builder.name);

@@ -46,6 +46,7 @@
       <module name="core" target="1.8" />
       <module name="core.main" target="1.8" />
       <module name="core.test" target="1.8" />
+      <module name="debugmenu" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

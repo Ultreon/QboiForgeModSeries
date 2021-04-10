@@ -149,7 +149,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                "qforgemods-core" {
+                "qfm_materials" {
                     source sourceSets.main
                 }
             }
@@ -165,7 +165,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                "qforgemods-core" {
+                "qfm_materials" {
                     source sourceSets.main
                 }
             }
@@ -181,15 +181,21 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the forgemod for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'qforgemods-core',
+            args '--mod', 'qfm_materials',
                     '--all',
                     '--output', file('src/generated/resources/'),
                     '--existing', file('src/main/resources/'),
                     '--existing-mod', 'computercraft',
-                    '--existing-mod', 'jei'
+                    '--existing-mod', 'jei',
+                    '--existing-mod', 'qfm_core',
+                    '--existing-mod', 'qfm_actionmenu',
+                    '--existing-mod', 'qfm_debugmenu',
+                    '--existing-mod', 'qfm_tools',
+                    '--existing-mod', 'qfm_pccrash',
+                    '--existing-mod', 'qfm_pcshutdown'
 
             mods {
-                "qforgemods-core" {
+                "qfm_materials" {
                     source sourceSets.main
                 }
             }
