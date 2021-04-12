@@ -260,14 +260,9 @@ dependencies {
     runtimeOnly fg.deobf(group: "com.qsoftware", name: "qmodlib", version: "1.0.+")
 
     // QFM Core
-    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1431");
-    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1431");
-
-    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "actionmenu", version: "2.0.1421")
-    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "actionmenu", version: "2.0.1421")
-
-    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "debugmenu", version: "2.0.1417");
-    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "debugmenu", version: "2.0.1417");
+    compile project(":qforgemods-core")
+    compile project(":qforgemods-actionmenu")
+    compile project(":qforgemods-debugmenu")
 
     compileOnly 'org.projectlombok:lombok:1.18.18'
     annotationProcessor 'org.projectlombok:lombok:1.18.18'

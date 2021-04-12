@@ -223,10 +223,8 @@ repositories {
     flatDir {
         dirs './libs'
     }
-    if (project.hasProperty("local_maven")) {
-        maven {
-            url "file://${local_maven}"
-        }
+    maven {
+        url "file://${local_maven}"
     }
     maven {
         url "https://github.com/QTechCommunity/Maven/raw/main/"

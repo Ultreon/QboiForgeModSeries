@@ -1,15 +1,4 @@
-import com.google.gson.Gson
-import com.google.gson.JsonObject
-import com.google.gson.stream.JsonWriter
-
-import java.nio.file.Files
-import java.nio.file.FileSystems
-import java.nio.file.FileSystem
-import java.nio.file.Paths
-import java.nio.file.Path
-import java.time.LocalDateTime
-import java.time.ZoneId
-
+//file:noinspection GroovyAssignabilityCheck
 buildscript {
     repositories {
         mavenLocal()
@@ -41,7 +30,6 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'maven'
 apply plugin: 'java-library'
 apply plugin: 'signing'
-//apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: "io.freefair.lombok"
@@ -49,52 +37,13 @@ apply plugin: "io.freefair.lombok"
 println('Java: ' + System.getProperty('java.version') + '\n JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ')\n Arch: ' + System.getProperty('os.arch'))
 println("OS: " + System.getProperty("os.name") + "\n OS Version: " + System.getProperty("os.version"))
 
-// Read build number file.
-int vers = Integer.parseInt(project.property("version").toString())
-int release = Integer.parseInt(project.property("versionRelease").toString())
-String stage = project.property("versionStage").toString()
-int stageRelease = Integer.parseInt(project.property("versionStageRelease").toString())
-String isDevTestString = project.property("isDevTest").toString()
-
-String content = "";
-String filePath = "buildnumber.txt";
-
-printf(new File('.').getAbsolutePath());
-
-try {
-    content = new String(Files.readAllBytes(FileSystems.getDefault().getPath(projectDir.getAbsolutePath(), filePath)));
-} catch (IOException e) {
-    throw new RuntimeException(e);
-}
-
-String buildNrString = content
-Integer buildNumber = Integer.valueOf(buildNrString)
-
-// Advance build number.
-buildNumber++
-println("Executing build " + buildNumber)
-String newBuild = buildNumber.toString()
-
-// Write new build number.
-FileOutputStream output = new FileOutputStream("buildnumber.txt")
-output.write(newBuild.getBytes())
-output.flush()
-output.close()
-
-
-//boolean isDevTest = Boolean.parseBoolean(isDevTestString)
-
-version = vers + "." + release + '.' + buildNumber
+version = "0"
 group = 'com.qtech.forgemods'
 archivesBaseName = 'tools'
 
-jar.version = version
 jar.archiveVersion.set(version)
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
-
-//GroovyShell shell = new GroovyShell(this.getClass().getClassLoader(), this.binding);
-//shell.run(file, arguments);
 
 println("Current version: " + version)
 println("Project: " + group + ":" + archivesBaseName)
@@ -135,7 +84,7 @@ minecraft {
     mappings channel: 'snapshot', version: '20210309-1.16.5'
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    accessTransformer = file('accesstransformer.cfg')
 
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
@@ -323,11 +272,8 @@ dependencies {
     runtimeOnly fg.deobf(group: "com.qsoftware", name: "qmodlib", version: "1.0.+")
 
     // QFM Core
-    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1431")
-    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "core", version: "2.0.1431")
-
-    compileOnly fg.deobf(group: "com.qtech.forgemods", name: "materials", version: "2.0.1414")
-    runtimeOnly fg.deobf(group: "com.qtech.forgemods", name: "materials", version: "2.0.1414")
+    compile project(":qforgemods-core")
+    compile project(":qforgemods-materials")
 
     compileOnly 'org.projectlombok:lombok:1.18.18'
     annotationProcessor 'org.projectlombok:lombok:1.18.18'
@@ -432,29 +378,6 @@ task replaceResources(type: Copy) {
         false
     }
 
-//    File modsToml = new File("src/main/resources/META-INF/mods.toml")
-//
-//    FileReader reader = new FileReader(modsToml)
-//    char[] buffer = new char[modsToml.length()]
-//    reader.read(buffer)
-//    reader.close()
-//
-//    String text = new String(buffer);
-//    text = text.replaceAll('\\\$\\\$QFM_VERSION\\\$\\\$', version.toString())
-//
-//    char[] out = text.getChars();
-//
-//    File outputToml = new File(processResources.destinationDir, "META-INF/mods.toml")
-//    if (outputToml.exists()) {
-//        outputToml.delete()
-//    }
-//    outputToml.createNewFile()
-//
-//    FileWriter writer = new FileWriter(outputToml)
-//    writer.write(text)
-//    writer.flush()
-//    writer.close()
-
     filter { line -> line.replaceAll('\\\$\\\$QFM_VERSION\\\$\\\$', version.toString()) }
     into new File(processResources.destinationDir, "META-INF")
 }
@@ -466,16 +389,10 @@ processResources {
 
 task sourcesJar(type: Jar) {
     from sourceSets.main.java.srcDirs
-    classifier = 'sources'
+    classifier 'sources'
 }
-//
-//task javadocJar(type: Jar, dependsOn: javadoc) {
-//    classifier = 'javadoc'
-//    from javadoc.destinationDir
-//}
 
 artifacts {
-//    archives javadocJar
     archives sourcesJar
 }
 
@@ -486,26 +403,11 @@ jar {
                 "Main-Class": "com.qtech.forgemods.core.Main",
                 "Specification-Title": "qforgemods-core",
                 "Specification-Vendor": "qtech-community",
-                "Specification-Version": version,
                 "Implementation-Title": project.name,
-                "Implementation-Version": "${version}",
                 "Implementation-Vendor" :"qtech-community",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-//                "MixinConfigs": "qforgemod.mixins.json",
                 "Build-Number": build.toString()
         ])
-    }
-    from {
-        configurations.extraLibs.collect {
-            if (it.getName().endsWith(".zip") || it.getName().endsWith(".jar")) {
-                try {
-                    it.isDirectory() ? it : zipTree(it)
-                } catch (Exception e) {
-                    System.out.println("Error occurred when expanding zip: " + it.getPath())
-                    e.printStackTrace();
-                }
-            }
-        }
     }
     zip64 = true;
 }
@@ -513,50 +415,3 @@ jar {
 // Example configuration to allow publishing using the maven-publish task
 // This is the preferred method to reobfuscate your jar file
 jar.finalizedBy('reobfJar')
-
-// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
-//publish.dependsOn('reobfJar')
-
-/**
- * Upload jars to local or ftp maven repository.
- */
-task("uploadJars", dependsOn: "build") {
-    // Set description.
-    description = "uploads JARs"
-
-    // Has local or sftp maven property.
-    if (project.hasProperty("local_maven") || project.hasProperty("sftp_maven")) {
-        // Apply plugins.
-        apply plugin: 'maven'
-
-        // Upload archives.
-        uploadArchives {
-            // Repositories.
-            repositories {
-                // Has local maven property.
-                if (project.hasProperty("local_maven")) {
-                    // Maven deployer for local repos.
-                    mavenDeployer {
-                        // Local maven repository url (in local filesystem).
-                        repository(url: "file://${local_maven}")
-                    }
-                }
-
-                // Has sftp maven property.
-                if (project.hasProperty("sftp_maven")) {
-                    // Maven deployer for sftp.
-                    repositories.mavenDeployer {
-                        configuration = configurations.deployerJars
-                        repository(url: "sftp://${sftp_maven}") {
-                            authentication(userName: "${sftp_username}", privateKey: "${sftp_key}")
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-// Upload jars to local of sftp maven.
-jar.finalizedBy(uploadJars)
-jar.finalizedBy(uploadArchives)
